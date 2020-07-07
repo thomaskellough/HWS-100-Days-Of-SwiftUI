@@ -9,39 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    // We are in a struct, so we can't edit values since they are immutable. Adding the @State property wrapper allows us to bypass this.
+    // @State is specifically designed for small properties that are stored in one view
+    // This means we should also add private properties
+    @State private var tapCount = 0
+    
     var body: some View {
         // Add a navigation bar
         NavigationView {
-            Form {
-                // Limit of 10! After 10, use groups
-                // You can also break it apart into sections
-                Section {
-                    Text("Hello, World!")
-                    Text("Hello, Old World!")
-                    Text("Hello, New World!")
-                    Text("Hello, World!")
-                    Text("Hello, Old World!")
-                }
-                Group {
-                    Text("Hello, World!")
-                    Text("Hello, Old World!")
-                    Text("Hello, New World!")
-                    Text("Hello, World!")
-                    Text("Hello, Old World!")
-                }
-                Section {
-                    Text("Hello, World!")
-                    Text("Hello, Old World!")
-                    Text("Hello, New World!")
-                    Text("Hello, World!")
-                    Text("Hello, Old World!")
-                }
+            Button("Tap Count \(tapCount)") {
+                self.tapCount += 1
             }
-//             Use modifiers to edit specific components
-//            .navigationBarTitle(Text("SwiftUI"))
-//             You can also use small titles by default
-//                .navigationBarTitle(Text("SwiftUI"), displayMode: .inline)
-//            You can also just use a shortcut for both since it's so common
             .navigationBarTitle("SwiftUI")
         }
     }
