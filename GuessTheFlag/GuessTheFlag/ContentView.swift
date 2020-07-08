@@ -10,12 +10,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack {
-            // Color needs to be placed first to fill bg
-            Color.green.edgesIgnoringSafeArea(.all)
-            Color(red:1, green: 0.8, blue: 0.3)
-            Color.red.frame(width: 250, height: 250)
-            Text("Your content")
+        // Common to dedicate images into your button
+        Button(action: {
+            print("Button was tapped!")
+        }) {
+            HStack(spacing: 10) {
+                Image(systemName: "pencil")
+                    .renderingMode(.original)
+                Text("Edit")
+            }
         }
     }
 }
