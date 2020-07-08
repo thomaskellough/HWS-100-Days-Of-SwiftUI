@@ -19,7 +19,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.blue, .secondary]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: [.blue, .white]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 30) {
@@ -44,6 +44,11 @@ struct ContentView: View {
                             .shadow(color: Color.black, radius: 2)
                     }
                 }
+                
+                Text("Current Score: \(score)")
+                    .foregroundColor(Color(red: 0.2, green: 0.2, blue: 1))
+                    .font(.headline)
+                    .fontWeight(.semibold)
                 
                 Spacer()
             }
