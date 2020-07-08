@@ -10,23 +10,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        // VStack can only have 10 children, you can control with a group
-        VStack(alignment: .leading, spacing: 20) {
-            HStack {
-                Text("Hello world!")
-                Text("Hello world!")
-                Text("Hello world!")
-            }
-            HStack {
-                Text("Hello world!")
-                Text("Hello world!")
-                Text("Hello world!")
-            }
-            HStack {
-                Text("Hello world!")
-                Text("Hello world!")
-                Text("Hello world!")
-            }
+        ZStack {
+            // Color needs to be placed first to fill bg
+            Color.green.edgesIgnoringSafeArea(.all)
+            Color(red:1, green: 0.8, blue: 0.3)
+            Color.red.frame(width: 250, height: 250)
+            Text("Your content")
         }
     }
 }
