@@ -9,16 +9,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var showingAlert = false
+    
     var body: some View {
-        // Common to dedicate images into your button
-        Button(action: {
-            print("Button was tapped!")
-        }) {
-            HStack(spacing: 10) {
-                Image(systemName: "pencil")
-                    .renderingMode(.original)
-                Text("Edit")
-            }
+        Button("Show Alert") {
+            self.showingAlert = true
+        }
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("This is a title"), message: Text("This is the message"), dismissButton: .default(Text("Okay")))
         }
     }
 }
