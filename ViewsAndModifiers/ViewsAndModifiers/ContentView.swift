@@ -9,8 +9,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var useRedText = false
+    
     var body: some View {
         VStack {
+            Button("Hello, SwiftUI") {
+                self.useRedText.toggle()
+            }
+            .foregroundColor(useRedText ? .red : .blue)
+            
             Text("Hello, World!")
                 // There is NOTHING behind a text view, so the color doesn't change
                 // You need to set the frame to inifity so it has the OPTION to take up the entire space
