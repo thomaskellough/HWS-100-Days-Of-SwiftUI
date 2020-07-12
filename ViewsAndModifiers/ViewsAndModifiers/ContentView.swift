@@ -11,9 +11,13 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var useRedText = false
+    // Views can also be created as properites
+    let textPropertyOne = Text("Draco Dormiens")
     
     var body: some View {
         VStack {
+            textPropertyOne
+                .foregroundColor(.purple)
             Button("Hello, SwiftUI") {
                 self.useRedText.toggle()
             }
@@ -51,7 +55,7 @@ struct ContentView: View {
             // However, child modifiers will always take priority
             .font(.title)
             // Blur effect is different. It is a regular modifier so childviews are actually added to the VStack
-            .blur(radius: 5)
+            .blur(radius: 0)
     }
 }
 
