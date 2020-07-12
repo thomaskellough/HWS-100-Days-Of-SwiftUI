@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BCA85B0624BB8E3A0082A6DB /* CustomContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA85B0524BB8E3A0082A6DB /* CustomContainer.swift */; };
 		BCF9E35624BB69790008C3AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9E35524BB69790008C3AE /* AppDelegate.swift */; };
 		BCF9E35824BB69790008C3AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9E35724BB69790008C3AE /* SceneDelegate.swift */; };
 		BCF9E35A24BB69790008C3AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9E35924BB69790008C3AE /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BCA85B0524BB8E3A0082A6DB /* CustomContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomContainer.swift; sourceTree = "<group>"; };
 		BCF9E35224BB69790008C3AE /* ViewsAndModifiers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewsAndModifiers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF9E35524BB69790008C3AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCF9E35724BB69790008C3AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				BCF9E35524BB69790008C3AE /* AppDelegate.swift */,
 				BCF9E35724BB69790008C3AE /* SceneDelegate.swift */,
 				BCF9E35924BB69790008C3AE /* ContentView.swift */,
+				BCA85B0524BB8E3A0082A6DB /* CustomContainer.swift */,
 				BCF9E35B24BB697B0008C3AE /* Assets.xcassets */,
 				BCF9E36024BB697B0008C3AE /* LaunchScreen.storyboard */,
 				BCF9E36324BB697B0008C3AE /* Info.plist */,
@@ -148,6 +151,7 @@
 			files = (
 				BCF9E35624BB69790008C3AE /* AppDelegate.swift in Sources */,
 				BCF9E35824BB69790008C3AE /* SceneDelegate.swift in Sources */,
+				BCA85B0624BB8E3A0082A6DB /* CustomContainer.swift in Sources */,
 				BCF9E35A24BB69790008C3AE /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
