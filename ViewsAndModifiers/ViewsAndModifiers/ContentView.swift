@@ -42,8 +42,16 @@ struct ContentView: View {
                 .background(Color.yellow)
                 .padding()
                 .background(Color.blue)
+                // Child modifier
+                .font(.callout)
+                .blur(radius: 0)
             
         }
+            // Modifers can be applied to containers. This is called an Environment Modifier.
+            // However, child modifiers will always take priority
+            .font(.title)
+            // Blur effect is different. It is a regular modifier so childviews are actually added to the VStack
+            .blur(radius: 5)
     }
 }
 
