@@ -12,6 +12,8 @@ struct ContentView: View {
     
     var body: some View {
         VStack(spacing: 10) {
+            Text("Challenge 1")
+                .challenge1()
             CapsuleText(text: "First")
                 .foregroundColor(Color.yellow)
             CapsuleText(text: "Second")
@@ -95,5 +97,20 @@ struct Watermark: ViewModifier {
 extension View {
     func watermarked(with text: String) -> some View {
         self.modifier(Watermark(text: text))
+    }
+}
+
+// Challenge 1
+struct Challenge1: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .foregroundColor(.blue)
+    }
+}
+
+extension View {
+    func challenge1() -> some View {
+        self.modifier(Challenge1())
     }
 }
