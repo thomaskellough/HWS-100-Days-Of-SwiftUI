@@ -30,10 +30,34 @@ struct PracticeContentView: View {
             DatePicker("Please enter a date", selection: $wakeUp)
                 .labelsHidden()
             
-            DatePicker("Please enter date", selection: $wakeUp, in: Date()...tomorrow)
-            DatePicker("Please enter date", selection: $wakeUp, in: Date()...)
+//            DatePicker("Please enter date", selection: $wakeUp, in: Date()...tomorrow)
+//            DatePicker("Please enter date", selection: $wakeUp, in: Date()...)
+            Button(action: {
+                self.print8am()
+            }) {
+                Text("Print 8am")
+            }
         }
         
+    }
+    
+    func print8am() {
+        var components = DateComponents()
+        components.hour = 8
+        components.minute = 0
+        let date = Calendar.current.date(from: components) ?? Date()
+        print(date)
+    }
+    
+    func date() {
+        let someDate = Date()
+        let components = Calendar.current.dateComponents([.hour, .minute], from: someDate)
+        let hour = components.hour ?? 0
+        let minute = components.minute ?? 0
+        
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        let dateString = formatter.string(from: someDate)
     }
 }
 
