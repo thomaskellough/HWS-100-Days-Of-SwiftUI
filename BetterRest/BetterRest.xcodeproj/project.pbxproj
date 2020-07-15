@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		BC1E53D924BEA0F800BC9B36 /* BetterRest.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BetterRest.mlmodel; sourceTree = "<group>"; };
-		BCE31D3E24BD56D1002534A2 /* BetterRest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterRest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCE31D3E24BD56D1002534A2 /* BetterRestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterRestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE31D4124BD56D1002534A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCE31D4324BD56D1002534A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BCE31D4524BD56D1002534A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		BCE31D3F24BD56D1002534A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BCE31D3E24BD56D1002534A2 /* BetterRest.app */,
+				BCE31D3E24BD56D1002534A2 /* BetterRestApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,7 +98,7 @@
 			);
 			name = BetterRest;
 			productName = BetterRest;
-			productReference = BCE31D3E24BD56D1002534A2 /* BetterRest.app */;
+			productReference = BCE31D3E24BD56D1002534A2 /* BetterRestApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -301,8 +301,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kellough.BetterRest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kellough.BetterRestApp;
+				PRODUCT_NAME = BetterRestApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -321,8 +321,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kellough.BetterRest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kellough.BetterRestApp;
+				PRODUCT_NAME = BetterRestApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
