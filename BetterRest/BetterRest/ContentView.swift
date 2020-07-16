@@ -11,46 +11,68 @@ import SwiftUI
 struct ContentView: View {
     @State private var wakeUp = defaultWakeTime
     @State private var sleepAmount = 8.0
-    @State private var coffeeAmount = 0
-    
-    @State private var alertTitle = ""
-    @State private var alertMessage = ""
-    @State private var showingAlert = false
+    @State private var coffeeAmount = 1
+    @State private var bedTime = ""
     
     var body: some View {
         NavigationView {
             Form {
+                Section(header: Text("Your ideal bedtime is...")) {
+                    Text(bedTime)
+                        .font(.largeTitle)
+                }
+                
                 Section(header: Text("When do you want to wake up?")) {
                     DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: [.hourAndMinute])
                         .labelsHidden()
                         .datePickerStyle(WheelDatePickerStyle())
                 }
-
+                
                 Section(header: Text("Desired amount of sleep")) {
-                    Stepper(value: $sleepAmount, in: 4...12, step: 0.25) {
-                        Text("\(sleepAmount, specifier: "%g") hours")
+                    Stepper(onIncrement: {
+                        self.sleepAmount += 0.25
+                        if self.sleepAmount > 12 {
+                            self.sleepAmount = 12
+                        }
+                        self.calculateBedtime()
+                    }, onDecrement: {
+                        self.sleepAmount -= 0.25
+                        if self.sleepAmount < 4 {
+                            self.sleepAmount = 4
+                        }
+                        self.calculateBedtime()
+                    }) {
+                        Text("\(sleepAmount, specifier: "%g") hours of sleep")
                     }
                 }
-
+                
                 Section(header: Text("Daily coffee intake")) {
-                    Picker(selection: $coffeeAmount, label: Text("Number of cups")) {
-                        ForEach(1 ..< 21) {
-                            Text(String($0))
+                    Stepper(onIncrement: {
+                        self.coffeeAmount += 1
+                        if self.coffeeAmount > 10 {
+                            self.coffeeAmount = 10
+                        }
+                        self.calculateBedtime()
+                    }, onDecrement: {
+                        self.coffeeAmount -= 1
+                        if self.coffeeAmount < 0 {
+                            self.coffeeAmount = 0
+                        }
+                        self.calculateBedtime()
+                    }) {
+                        if self.coffeeAmount == 1 {
+                            Text("\(coffeeAmount) cup of coffee")
+                        } else {
+                            Text("\(coffeeAmount) cups of coffee")
                         }
                     }
                 }
                 
+                
             }
             .navigationBarTitle("Better Rest")
-            .navigationBarItems(trailing:
-                Button(action: calculateBedtime) {
-                    Text("Calculate")
-                }
-            )
-                .alert(isPresented: $showingAlert) {
-                    Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-            }
         }
+        .onAppear(perform: self.calculateBedtime)
     }
     
     static var defaultWakeTime: Date {
@@ -73,15 +95,11 @@ struct ContentView: View {
             let formatter = DateFormatter()
             formatter.timeStyle = .short
             
-            alertMessage = formatter.string(from: sleepTime)
-            alertTitle = "Your ideal bedtime is..."
+            bedTime = formatter.string(from: sleepTime)
             
         } catch {
-            alertTitle = "Error"
-            alertMessage = "Sorry, there was a problem calculating the prediction"
+            bedTime = "Sorry, there was a problem calculating the prediction"
         }
-        
-        showingAlert = true
     }
 }
 
