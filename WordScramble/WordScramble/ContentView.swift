@@ -18,6 +18,8 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @State private var score = "0"
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -29,6 +31,14 @@ struct ContentView: View {
                 List(usedWords, id: \.self) {
                     Image(systemName: "\($0.count).circle")
                     Text($0)
+                }
+                HStack {
+                    Text("Score:")
+                        .padding()
+                        .font(.title)
+                    TextField("0", text: $score)
+                        .padding()
+                        .font(.title)
                 }
             }
         .navigationBarTitle(rootWord)
@@ -65,6 +75,7 @@ struct ContentView: View {
             return
         }
         
+        recalculateScore(word: answer)
         usedWords.insert(answer, at: 0)
         newWord = ""
     }
@@ -120,6 +131,14 @@ struct ContentView: View {
         errorTitle = title
         errorMessage = message
         showingError = true
+    }
+    
+    func recalculateScore(word: String) {
+        let points = word.count
+        if var current = Int(score) {
+            current += points
+            score = "\(current)"
+        }
     }
 }
 
