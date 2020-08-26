@@ -21,9 +21,19 @@ struct ContentView: View {
             .background(Color.red)
             .foregroundColor(.white)
             .clipShape(Circle())
-            .scaleEffect(animationAmount)
-            .blur(radius: (animationAmount - 1) * 3)
-            .animation(.default)
+            .overlay(
+                Circle()
+                    .stroke(Color.red)
+                    .scaleEffect(animationAmount)
+                    .opacity(Double(2 - animationAmount))
+                    .animation(
+                        Animation.easeOut(duration: 1)
+                            .repeatForever(autoreverses: false)
+                )
+            )
+                .onAppear {
+                    self.animationAmount = 2
+            }
         }
     }
 }
