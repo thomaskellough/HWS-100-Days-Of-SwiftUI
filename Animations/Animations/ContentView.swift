@@ -13,44 +13,87 @@ struct ContentView: View {
     @State private var animationAmount = 0.0
     @State private var enabled = false
     
+    @State private var dragAmount = CGSize.zero
+    
+    let letters = Array("Hello SwiftUI")
+    
     var body: some View {
+        
         VStack {
-            Button("Flip Y") {
-                withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
-                    self.animationAmount += 360
+            
+            HStack(spacing: 0) {
+                ForEach(0..<letters.count) { num in
+                    Text(String(self.letters[num]))
+                        .padding(5)
+                        .font(.title)
+                        .background(self.enabled ? Color.blue : Color.red)
+                        .offset(self.dragAmount)
+                        .animation(Animation.default.delay(Double(num) / 20))
                 }
             }
-            .styleButton(color: Color.red)
-            .rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 1, z: 0))
-            .padding()
-            
-            Button("Flip X") {
-                withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
-                    self.animationAmount += 360
+            .gesture(
+                DragGesture()
+                    .onChanged { self.dragAmount = $0.translation }
+                    .onEnded { _ in
+                        self.dragAmount = .zero
+                        self.enabled.toggle()
                 }
-            }
-            .styleButton(color: Color.blue)
-            .rotation3DEffect(.degrees(animationAmount), axis: (x: 1, y: 0, z: 0))
-            .padding()
+            )
             
-            Button("Flip Z") {
-                withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
-                    self.animationAmount += 360
-                }
-            }
-            .styleButton(color: Color.green)
-            .rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 0, z: 1))
-            .padding()
+            LinearGradient(gradient: Gradient(colors: [.yellow, .red]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                .frame(width: 300, height: 200)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .offset(dragAmount)
+                .gesture(
+                    DragGesture()
+                        .onChanged { self.dragAmount = $0.translation }
+                        .onEnded {  _ in
+                            withAnimation(.spring()) {
+                                self.dragAmount = .zero
+                            }
+                        }
+                )
+                .animation(.spring())
             
-            Button("Color Change") {
-                self.enabled.toggle()
-            }
-            .frame(width: 200, height: 200)
-            .styleButtonStack(color: enabled ? Color.yellow : Color.purple)
-            .animation(.default)
-            .foregroundColor(.black)
-            .clipShape(RoundedRectangle(cornerRadius: enabled ? 60 : 0))
-            .animation(.interpolatingSpring(stiffness: 10, damping: 1))
+            
+            
+            
+//            Button("Flip Y") {
+//                withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
+//                    self.animationAmount += 360
+//                }
+//            }
+//            .styleButton(color: Color.red)
+//            .rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 1, z: 0))
+//            .padding()
+//
+//            Button("Flip X") {
+//                withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
+//                    self.animationAmount += 360
+//                }
+//            }
+//            .styleButton(color: Color.blue)
+//            .rotation3DEffect(.degrees(animationAmount), axis: (x: 1, y: 0, z: 0))
+//            .padding()
+//
+//            Button("Flip Z") {
+//                withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
+//                    self.animationAmount += 360
+//                }
+//            }
+//            .styleButton(color: Color.green)
+//            .rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 0, z: 1))
+//            .padding()
+//
+//            Button("Color Change") {
+//                self.enabled.toggle()
+//            }
+//            .frame(width: 200, height: 200)
+//            .styleButtonStack(color: enabled ? Color.yellow : Color.purple)
+//            .animation(.default)
+//            .foregroundColor(.black)
+//            .clipShape(RoundedRectangle(cornerRadius: enabled ? 60 : 0))
+//            .animation(.interpolatingSpring(stiffness: 10, damping: 1))
         }
     }
 }
