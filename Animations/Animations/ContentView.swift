@@ -10,27 +10,33 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var animationAmount: CGFloat = 1
+    @State private var animationAmount = 0.0
     
     var body: some View {
-        print(animationAmount)
-        
-        return VStack {
-            Stepper("Scale Amount: \(Int(animationAmount))", value: $animationAmount.animation(
-                Animation.easeInOut(duration: 1)
-                    .repeatCount(3, autoreverses: true)
-            ), in: 1...10)
-            
-            Spacer()
-            
-            Button("Tap Me") {
-                self.animationAmount += 1
+        VStack {
+            Button("Flip Y") {
+                withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
+                    self.animationAmount += 360
+                }
             }
-            .padding(50)
-            .background(Color.red)
-            .foregroundColor(.white)
-            .clipShape(Circle())
-            .scaleEffect(animationAmount)
+            .styleButton(color: Color.red)
+            .rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 1, z: 0))
+            .padding()
+            Button("Flip X") {
+                withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
+                    self.animationAmount += 360
+                }
+            }
+            .styleButton(color: Color.blue)
+            .rotation3DEffect(.degrees(animationAmount), axis: (x: 1, y: 0, z: 0))
+            .padding()
+            Button("Flip Z") {
+                withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
+                    self.animationAmount += 360
+                }
+            }
+            .styleButton(color: Color.green)
+            .rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 0, z: 1))
         }
     }
 }
@@ -38,5 +44,25 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+// Custom View Modifier
+
+struct ButtonStyle: ViewModifier {
+    var color: Color
+    
+    func body(content: Content) -> some View {
+        content
+            .padding(50)
+            .background(color)
+            .foregroundColor(.white)
+            .clipShape(Circle())
+    }
+}
+
+extension View {
+    func styleButton(color: Color) -> some View {
+        self.modifier(ButtonStyle(color: color))
     }
 }
