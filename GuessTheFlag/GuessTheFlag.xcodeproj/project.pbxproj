@@ -13,6 +13,7 @@
 		BC38D8ED24B56B4600A96960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC38D8EC24B56B4600A96960 /* Assets.xcassets */; };
 		BC38D8F024B56B4600A96960 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC38D8EF24B56B4600A96960 /* Preview Assets.xcassets */; };
 		BC38D8F324B56B4600A96960 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC38D8F124B56B4600A96960 /* LaunchScreen.storyboard */; };
+		BCFF555E24F75F9200124F9B /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF555D24F75F9200124F9B /* Animations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BC38D8EF24B56B4600A96960 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC38D8F224B56B4600A96960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC38D8F424B56B4600A96960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCFF555D24F75F9200124F9B /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				BC38D8E624B56B4400A96960 /* AppDelegate.swift */,
+				BCFF555D24F75F9200124F9B /* Animations.swift */,
 				BC38D8E824B56B4400A96960 /* SceneDelegate.swift */,
 				BC38D8EA24B56B4400A96960 /* ContentView.swift */,
 				BC38D8EC24B56B4600A96960 /* Assets.xcassets */,
@@ -148,6 +151,7 @@
 			files = (
 				BC38D8E724B56B4400A96960 /* AppDelegate.swift in Sources */,
 				BC38D8E924B56B4400A96960 /* SceneDelegate.swift in Sources */,
+				BCFF555E24F75F9200124F9B /* Animations.swift in Sources */,
 				BC38D8EB24B56B4400A96960 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
