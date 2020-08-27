@@ -64,6 +64,11 @@ struct ContentView: View {
     }
     
     func flagTapped(_ number: Int) {
+        
+        withAnimation(.easeInOut) {
+            self.fadeAmount = 0.25
+        }
+        
         if number == correctAnwser {
             scoreTitle = "Correct"
             score += 1
@@ -73,11 +78,11 @@ struct ContentView: View {
             }
         } else {
             scoreTitle = "Wrong! That's the flag of \(countries[number])"
+            withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
+                self.fadeAmount = 0.0
+            }
         }
         
-        withAnimation(.easeInOut) {
-            self.fadeAmount = 0.25
-        }
         
         showingScore = true
     }
