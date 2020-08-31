@@ -3,4 +3,180 @@
    uuid = "92758A99-F100-40CE-BFA7-A068888A767F"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9FE1B079-6D01-4C2D-9B1C-B9A096CC1564"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Milestone 4-6 Edutainment/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "calculateAnswer(left:right:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9FE1B079-6D01-4C2D-9B1C-B9A096CC1564 - 8024974d6bec2a46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Milestone_4_6_Edutainment.ContentView.(calculateAnswer in _791146BB160E81D0C884AB11E5AE018C)(left: Swift.Int, right: Swift.Int) -&gt; Swift.Int"
+                  moduleName = "Milestone 4-6 Edutainment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomas.kellough/tommy/HWS-100-Days-Of-SwiftUI/Milestone%204-6%20Edutainment/Milestone%204-6%20Edutainment/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "154">
+               </Location>
+               <Location
+                  uuid = "9FE1B079-6D01-4C2D-9B1C-B9A096CC1564 - 8024974d6bec2a46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Milestone_4_6_Edutainment.ContentView.(calculateAnswer in _791146BB160E81D0C884AB11E5AE018C)(left: Swift.Int, right: Swift.Int) -&gt; Swift.Int"
+                  moduleName = "Milestone 4-6 Edutainment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomas.kellough/tommy/HWS-100-Days-Of-SwiftUI/Milestone%204-6%20Edutainment/Milestone%204-6%20Edutainment/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "346">
+               </Location>
+               <Location
+                  uuid = "9FE1B079-6D01-4C2D-9B1C-B9A096CC1564 - 8024974d6bec2a46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Milestone_4_6_Edutainment.ContentView.(calculateAnswer in _791146BB160E81D0C884AB11E5AE018C)(left: Swift.Int, right: Swift.Int) -&gt; Swift.Int"
+                  moduleName = "Milestone 4-6 Edutainment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomas.kellough/tommy/HWS-100-Days-Of-SwiftUI/Milestone%204-6%20Edutainment/Milestone%204-6%20Edutainment/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "604">
+               </Location>
+               <Location
+                  uuid = "9FE1B079-6D01-4C2D-9B1C-B9A096CC1564 - 8024974d6bec2a46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Milestone_4_6_Edutainment.ContentView.(calculateAnswer in _791146BB160E81D0C884AB11E5AE018C)(left: Swift.Int, right: Swift.Int) -&gt; Swift.Int"
+                  moduleName = "Milestone 4-6 Edutainment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomas.kellough/tommy/HWS-100-Days-Of-SwiftUI/Milestone%204-6%20Edutainment/Milestone%204-6%20Edutainment/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "868">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1682052E-32E9-4E0F-B7CD-C28D5E165570"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Milestone 4-6 Edutainment/AnimalView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "1682052E-32E9-4E0F-B7CD-C28D5E165570 - c8933425a1d169f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt; in Milestone_4_6_Edutainment.AnimalView.body.getter : some"
+                  moduleName = "Milestone 4-6 Edutainment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomas.kellough/tommy/HWS-100-Days-Of-SwiftUI/Milestone%204-6%20Edutainment/Milestone%204-6%20Edutainment/AnimalView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "1682052E-32E9-4E0F-B7CD-C28D5E165570 - 11865a2f825e66c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt; in Milestone_4_6_Edutainment.AnimalView.body.getter : some"
+                  moduleName = "Milestone 4-6 Edutainment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomas.kellough/tommy/HWS-100-Days-Of-SwiftUI/Milestone%204-6%20Edutainment/Milestone%204-6%20Edutainment/AnimalView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "836C294D-502F-4515-BB94-31437CD7B591"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Milestone 4-6 Edutainment/PlayView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "836C294D-502F-4515-BB94-31437CD7B591 - 10b50bccdcc8f932"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI._ConditionalContent&lt;Milestone_4_6_Edutainment.AnimalView, Milestone_4_6_Edutainment.AnimalView&gt;&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI._ConditionalContent&lt;Milestone_4_6_Edutainment.AnimalView, Milestone_4_6_Edutainment.AnimalView&gt;&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Group&lt;SwiftUI.VStack&lt;SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI._ConditionalContent&lt;Milestone_4_6_Edutainment.AnimalView, Milestone_4_6_Edutainment.AnimalView&gt;&gt;&gt;&gt;, SwiftUI.Text, SwiftUI.Group&lt;SwiftUI.VStack&lt;SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI._ConditionalContent&lt;Milestone_4_6_Edutainment.AnimalView, Milestone_4_6_Edutainment.AnimalView&gt;&gt;&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Group&lt;SwiftUI.VStack&lt;SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI._ConditionalContent&lt;Milestone_4_6_Edutainment.AnimalView, Milestone_4_6_Edutainment.AnimalView&gt;&gt;&gt;&gt;, SwiftUI.Text, SwiftUI.Group&lt;SwiftUI.VStack&lt;SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI._ConditionalContent&lt;Milestone_4_6_Edutainment.AnimalView, Milestone_4_6_Edutainment.AnimalView&gt;&gt;&gt;&gt;)&gt;&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Swift.String&gt;, Swift.String, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.Spacer)&gt; in Milestone_4_6_Edutainment.Play.body.getter : some"
+                  moduleName = "Milestone 4-6 Edutainment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomas.kellough/tommy/HWS-100-Days-Of-SwiftUI/Milestone%204-6%20Edutainment/Milestone%204-6%20Edutainment/PlayView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "836C294D-502F-4515-BB94-31437CD7B591 - 5ff41565f8a2688a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; SwiftUI._ConditionalContent&lt;Milestone_4_6_Edutainment.AnimalView, Milestone_4_6_Edutainment.AnimalView&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI._ConditionalContent&lt;Milestone_4_6_Edutainment.AnimalView, Milestone_4_6_Edutainment.AnimalView&gt;&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI._ConditionalContent&lt;Milestone_4_6_Edutainment.AnimalView, Milestone_4_6_Edutainment.AnimalView&gt;&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Group&lt;SwiftUI.VStack&lt;SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI._ConditionalContent&lt;Milestone_4_6_Edutainment.AnimalView, Milestone_4_6_Edutainment.AnimalView&gt;&gt;&gt;&gt;, SwiftUI.Text, SwiftUI.Group&lt;SwiftUI.VStack&lt;SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI._ConditionalContent&lt;Milestone_4_6_Edutainment.AnimalView, Milestone_4_6_Edutainment.AnimalView&gt;&gt;&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Group&lt;SwiftUI.VStack&lt;SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI._ConditionalContent&lt;Milestone_4_6_Edutainment.AnimalView, Milestone_4_6_Edutainment.AnimalView&gt;&gt;&gt;&gt;, SwiftUI.Text, SwiftUI.Group&lt;SwiftUI.VStack&lt;SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI._ConditionalContent&lt;Milestone_4_6_Edutainment.AnimalView, Milestone_4_6_Edutainment.AnimalView&gt;&gt;&gt;&gt;)&gt;&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Swift.String&gt;, Swift.String, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.Spacer)&gt; in Milestone_4_6_Edutainment.Play.body.getter : some"
+                  moduleName = "Milestone 4-6 Edutainment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thomas.kellough/tommy/HWS-100-Days-Of-SwiftUI/Milestone%204-6%20Edutainment/Milestone%204-6%20Edutainment/PlayView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "111">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

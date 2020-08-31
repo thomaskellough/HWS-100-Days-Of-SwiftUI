@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC13FEAA24FD629A0087D743 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC13FEA924FD629A0087D743 /* SettingsView.swift */; };
+		BC13FEAC24FD62C10087D743 /* AnimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC13FEAB24FD62C10087D743 /* AnimalView.swift */; };
+		BC13FEAE24FD62D60087D743 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC13FEAD24FD62D60087D743 /* PlayView.swift */; };
 		BCB39CCA24F9D47900AC0215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB39CC924F9D47900AC0215 /* AppDelegate.swift */; };
 		BCB39CCC24F9D47900AC0215 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB39CCB24F9D47900AC0215 /* SceneDelegate.swift */; };
 		BCB39CCE24F9D47900AC0215 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB39CCD24F9D47900AC0215 /* ContentView.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC13FEA924FD629A0087D743 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BC13FEAB24FD62C10087D743 /* AnimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalView.swift; sourceTree = "<group>"; };
+		BC13FEAD24FD62D60087D743 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 		BCB39CC624F9D47900AC0215 /* Milestone 4-6 Edutainment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Milestone 4-6 Edutainment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB39CC924F9D47900AC0215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCB39CCB24F9D47900AC0215 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +62,6 @@
 		BCB39CC824F9D47900AC0215 /* Milestone 4-6 Edutainment */ = {
 			isa = PBXGroup;
 			children = (
-				BCB39CDD24FB3B2E00AC0215 /* New Group */,
 				BCB39CC924F9D47900AC0215 /* AppDelegate.swift */,
 				BCB39CCB24F9D47900AC0215 /* SceneDelegate.swift */,
 				BCB39CCD24F9D47900AC0215 /* ContentView.swift */,
@@ -64,6 +69,9 @@
 				BCB39CD424F9D47A00AC0215 /* LaunchScreen.storyboard */,
 				BCB39CD724F9D47A00AC0215 /* Info.plist */,
 				BCB39CD124F9D47A00AC0215 /* Preview Content */,
+				BC13FEA924FD629A0087D743 /* SettingsView.swift */,
+				BC13FEAB24FD62C10087D743 /* AnimalView.swift */,
+				BC13FEAD24FD62D60087D743 /* PlayView.swift */,
 			);
 			path = "Milestone 4-6 Edutainment";
 			sourceTree = "<group>";
@@ -74,13 +82,6 @@
 				BCB39CD224F9D47A00AC0215 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		BCB39CDD24FB3B2E00AC0215 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC13FEAE24FD62D60087D743 /* PlayView.swift in Sources */,
+				BC13FEAC24FD62C10087D743 /* AnimalView.swift in Sources */,
 				BCB39CCA24F9D47900AC0215 /* AppDelegate.swift in Sources */,
+				BC13FEAA24FD629A0087D743 /* SettingsView.swift in Sources */,
 				BCB39CCC24F9D47900AC0215 /* SceneDelegate.swift in Sources */,
 				BCB39CCE24F9D47900AC0215 /* ContentView.swift in Sources */,
 			);

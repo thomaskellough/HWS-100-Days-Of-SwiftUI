@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var counts = (1, 1)
     @State private var difficulty = 0
     @State private var numberOfQuestions = 1
+    @State private var questionNumber = 1
     @State private var answerChoices: [String] = []
     @State private var arithmetic = "+"
     let arithmeticOptions = ["+", "-", "x"]
@@ -59,7 +60,7 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
                 Group {
                     if playView {
-                        Play(counts: $counts, answerChoices: $answerChoices, arithmetic: $arithmetic, answer: $answer, animal: animals.randomElement() ?? "bear")
+                        Play(counts: $counts, answerChoices: $answerChoices, arithmetic: $arithmetic, answer: $answer, numberOfQuestions: $numberOfQuestions, questionNumber: $questionNumber,animal: animals.randomElement() ?? "bear")
                     } else {
                         Settings(difficulty: $difficulty, numberOfQuestions: $numberOfQuestions)
                     }
@@ -147,164 +148,10 @@ struct ContentView: View {
         
         return choices.shuffled()
     }
-    
-    private func checkAnswer(_ answerButton: String) {
-        if let answerText = Int(answerButton) {
-            if answerText == self.answer {
-                print("Great job!")
-                return
-            }
-        }
-        
-        print("Ouch")
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-struct Play: View {
-    @Binding
-    var counts: (Int, Int)
-    
-    @Binding
-    var answerChoices: [String]
-    
-    @Binding
-    var arithmetic: String
-    
-    @Binding
-    var answer: Int
-
-    @State private var questionNumber = 1
-    let animal: String
-    
-    private func numberOfRows(total: Int) -> Int{
-        switch total {
-        case 0...3:
-            return 1
-        case 4...6:
-            return 2
-        case 7...9:
-            return 3
-        case 10...12:
-            return 4
-        default:
-            return 0
-        }
-    }
-    
-    var body: some View {
-        
-        VStack {
-            HStack {
-                Group {
-                    VStack {
-                        ForEach(0 ..< numberOfRows(total: counts.0)) {row in
-                            if row == (self.numberOfRows(total: self.counts.0) - 1) {
-                                AnimalView(animal: self.animal, animalCount: (self.counts.0 % 3) == 0 ? 3 : (self.counts.0 % 3))
-                            } else {
-                                AnimalView(animal: self.animal, animalCount: 3)
-                            }
-                        }
-                    }
-                }
-                
-                Text(arithmetic)
-                    .font(.largeTitle)
-                
-                Group {
-                    VStack {
-                        ForEach(0 ..< numberOfRows(total: counts.1)) {row in
-                            if row == (self.numberOfRows(total: self.counts.1) - 1) {
-                                AnimalView(animal: self.animal, animalCount: (self.counts.1 % 3) == 0 ? 3 : (self.counts.1 % 3))
-                            } else {
-                                AnimalView(animal: self.animal, animalCount: 3)
-                            }
-                        }
-                    }
-                }
-            }
-            Spacer()
-            
-            HStack {
-                ForEach(answerChoices, id: \.self) { answer in
-                    Button(answer) {
-                        self.checkAnswer(answer)
-                    }
-                    .frame(width: 80, height: 50)
-                    .background(LinearGradient(gradient: Gradient(colors: [.red, .blue]), startPoint: .leading, endPoint: .trailing))
-                    .cornerRadius(40)
-                    .foregroundColor(.white)
-                }
-            }
-            
-            Spacer()
-            
-        }
-    }
-    
-    private func checkAnswer(_ answerButton: String) {
-        if let answerText = Int(answerButton) {
-            if answerText == self.answer {
-                print("Great job!")
-                return
-            }
-        }
-
-        print("Ouch")
-    }
-}
-
-struct AnimalView: View {
-    let animal: String
-    var animalCount: Int
-    
-    var body: some View {
-        HStack {
-            ForEach(0 ..< animalCount) { _ in
-                Image(self.animal)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 50)
-            }
-        }
-    }
-}
-
-struct Settings: View {
-    @Binding
-    var difficulty: Int
-    @Binding
-    var numberOfQuestions: Int
-    
-    let numberOfQuestionsList = [5, 10, 15, 20]
-    let difficultyLevels = ["Easy", "Medium", "Hard"]
-    
-    var body: some View {
-        VStack {
-            Section (header: Text("Difficulty level")) {
-                Picker("Difficulty level", selection: $difficulty) {
-                    ForEach(0 ..< difficultyLevels.count) {
-                        Text("\(self.difficultyLevels[$0])")
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-            }
-            Section (header: Text("How many questions per round?")){
-                Picker("Number of questions", selection: $numberOfQuestions) {
-                    ForEach(0 ..< numberOfQuestionsList.count) {
-                        Text("\(self.numberOfQuestionsList[$0])")
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-            }
-            
-        Spacer()
-            
-        }
-        .foregroundColor(.white)
     }
 }
