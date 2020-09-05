@@ -14,6 +14,7 @@ struct AddView: View {
     @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = ""
+    @State private var showingInvalidAmountAlert = false
     
     @ObservedObject var expenses: Expenses
     
@@ -31,14 +32,18 @@ struct AddView: View {
                 TextField("Amount", text: $amount)
                     .keyboardType(.numberPad)
             }
+            .alert(isPresented: $showingInvalidAmountAlert) {
+                Alert(title: Text("Error"), message: Text("Please enter an integer only"), dismissButton: .default(Text("Okay!")))
+            }
             .navigationBarTitle("Add new expense")
             .navigationBarItems(trailing: Button("Save") {
                 if let actualAmount = Int(self.amount) {
                     let item = ExpenseItem(name: self.name, type: self.type, amount: actualAmount)
                     self.expenses.items.append(item)
+                    self.presentationMode.wrappedValue.dismiss()
+                } else {
+                    self.showingInvalidAmountAlert.toggle()
                 }
-                
-                self.presentationMode.wrappedValue.dismiss()
             })
         }
     }
