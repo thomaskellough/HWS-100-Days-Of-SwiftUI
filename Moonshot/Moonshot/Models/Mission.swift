@@ -28,6 +28,15 @@ struct Mission: Codable, Identifiable {
         }
     }
     
+    var crewName: String {
+        var crewString = ""
+        for member in crew {
+            crewString += ", \(member.name.capitalized)"
+        }
+        
+        return crewString.replacingFirstOccurrence(of: ", ", with: "")
+    }
+    
     let id: Int
     let launchDate: Date?
     let crew: [CrewRole]
