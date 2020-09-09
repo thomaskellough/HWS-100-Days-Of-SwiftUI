@@ -11,11 +11,12 @@ import SwiftUI
 struct AstronautView: View {
     
     let astronaut: Astronaut
+    let missions: [Mission]
     
     var body: some View {
         GeometryReader { geometry in
             ScrollView(.vertical) {
-                VStack {
+                VStack(alignment: .leading) {
                     Image(self.astronaut.id)
                         .resizable()
                         .scaledToFit()
@@ -24,18 +25,45 @@ struct AstronautView: View {
                     Text(self.astronaut.description)
                         .padding()
                         .layoutPriority(1)
+                    
+                    Text("Missions flown")
+                        .padding()
+                        .font(.headline)
+                    
+                    ForEach(self.missions) { mission in
+                        Text(mission.displayName)
+                            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 20))
+                    }
                 }
             }
         }
         .navigationBarTitle(Text(astronaut.name), displayMode: .inline)
+    }
+    
+    init(astronaut: Astronaut, missions: [Mission]) {
+        self.astronaut = astronaut
+        
+        var astronautMissions: [Mission] = []
+        
+        for mission in missions {
+            for crew in mission.crew {
+                if astronaut.name.lowercased().contains(crew.name.lowercased()) {
+                    astronautMissions.append(mission)
+                    break
+                }
+            }
+        }
+        
+        self.missions = astronautMissions
     }
 }
 
 struct AstronautView_Previews: PreviewProvider {
     
     static let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
+    static let missions: [Mission] = Bundle.main.decode("missions.json")
     
     static var previews: some View {
-        AstronautView(astronaut: astronauts[0])
+        AstronautView(astronaut: astronauts[0], missions: missions)
     }
 }
