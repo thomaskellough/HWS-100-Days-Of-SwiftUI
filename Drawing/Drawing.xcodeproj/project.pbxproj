@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC912A682512B89B0020839A /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC912A672512B89B0020839A /* ChallengesView.swift */; };
 		BCD7F5BF2508614F00835A13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD7F5BE2508614F00835A13 /* AppDelegate.swift */; };
 		BCD7F5C12508614F00835A13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD7F5C02508614F00835A13 /* SceneDelegate.swift */; };
 		BCD7F5C32508614F00835A13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD7F5C22508614F00835A13 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC912A672512B89B0020839A /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
 		BCD7F5BB2508614F00835A13 /* Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD7F5BE2508614F00835A13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCD7F5C02508614F00835A13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				BCD7F5C92508615000835A13 /* LaunchScreen.storyboard */,
 				BCD7F5CC2508615000835A13 /* Info.plist */,
 				BCD7F5C62508615000835A13 /* Preview Content */,
+				BC912A672512B89B0020839A /* ChallengesView.swift */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC912A682512B89B0020839A /* ChallengesView.swift in Sources */,
 				BCD7F5BF2508614F00835A13 /* AppDelegate.swift in Sources */,
 				BCD7F5C12508614F00835A13 /* SceneDelegate.swift in Sources */,
 				BCD7F5C32508614F00835A13 /* ContentView.swift in Sources */,
