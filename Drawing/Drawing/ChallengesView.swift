@@ -15,6 +15,9 @@ struct ChallengesView: View {
     let arrowHeight: CGFloat = 100
     
     @State private var lineWidth: CGFloat = 1.0
+    @State private var startPosition = 0
+    @State private var endPosition = 6
+    
     
     
     var body: some View {
@@ -26,6 +29,14 @@ struct ChallengesView: View {
                         self.lineWidth = 15.0
                     }
                 }
+            
+            ColorCyclingRectangle(startPosition: startPosition, endPosition: endPosition)
+                .frame(width: 300, height: 200)
+            
+            Stepper("Start Index : \(startPosition)", value: $startPosition, in: 0...8)
+            Stepper("End Index: \(endPosition)", value: $startPosition, in: 0...8)
+            
+            Spacer()
         }
     }
 }
@@ -76,5 +87,28 @@ struct Arrow: Shape {
         self.arrowGap = (UIScreen.main.bounds.width - arrowWidth) / 2
         
         self.totalHeight = baseHeight + arrowHeight * 2
+    }
+}
+
+struct ColorCyclingRectangle: View {
+    var amount = 0.0
+    var steps = 100
+    var positionPoints: [UnitPoint] = [.bottom, .bottomLeading, .bottomTrailing, .center, .leading, .top, .topLeading, .trailing, .zero]
+    var startPosition = 0
+    var endPosition = 1
+    
+    var body: some View {
+        Rectangle()
+            .fill(LinearGradient(gradient: Gradient(colors: [.red, .orange, .yellow, .green, .blue, .purple, .pink]), startPoint: positionPoints[startPosition], endPoint: positionPoints[endPosition]))
+    }
+    
+    func color(for value: Int, brightness: Double) -> Color {
+        var targetHue = Double(value) / Double(self.steps) + self.amount
+        
+        if targetHue > 1 {
+            targetHue -= 1
+        }
+        
+        return Color(hue: targetHue, saturation: 1, brightness: brightness)
     }
 }
