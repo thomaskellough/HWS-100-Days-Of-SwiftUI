@@ -13,10 +13,15 @@ struct ContentView: View {
     @State var petalWidth = 100.0
     
     var body: some View {
-        Capsule()
-        .strokeBorder(ImagePaint(image: Image("bgHome"), scale: 0.1), lineWidth: 20)
-        .frame(width: 300, height: 200)
-        
+        NavigationView {
+            VStack {
+                NavigationLink(
+                    destination: ChallengesView(),
+                    label: {
+                        Text("Challenges")
+                    })                
+            }
+        }
     }
 }
 
