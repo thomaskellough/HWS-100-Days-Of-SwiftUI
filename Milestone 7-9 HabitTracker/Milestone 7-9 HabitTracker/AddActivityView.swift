@@ -32,7 +32,7 @@ struct AddActivityView: View {
                     Alert(title: Text("Error"), message: Text("Please enter an integer only"), dismissButton: .default(Text("Okay")))
                 }
             }
-            .navigationTitle("Add a new activity")
+            .navigationBarTitle("Add a new activity")
             .navigationBarItems(
                 trailing:
                     Button("Save") {

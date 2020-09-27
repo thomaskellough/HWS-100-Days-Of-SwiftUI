@@ -15,5 +15,5 @@ struct Activity: Identifiable {
     let id = UUID()
     let name: String
     let description: String
-    let count: Int
+    var count: Int
 }

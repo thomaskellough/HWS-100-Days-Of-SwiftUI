@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BC3676D1251929FE007677BB /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3676D0251929FE007677BB /* AddActivityView.swift */; };
 		BC3676D3251945FF007677BB /* ActivitiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3676D2251945FF007677BB /* ActivitiesModel.swift */; };
+		BC880D32252022A700E6BB3E /* ActivityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC880D31252022A700E6BB3E /* ActivityDetailView.swift */; };
+		BCC51C142520FA9D0067AE21 /* CustomViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC51C132520FA9D0067AE21 /* CustomViewModifiers.swift */; };
 		BCD97DF92518453600F2B6FC /* Milestone_7_9_HabitTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD97DF82518453600F2B6FC /* Milestone_7_9_HabitTrackerApp.swift */; };
 		BCD97DFB2518453600F2B6FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD97DFA2518453600F2B6FC /* ContentView.swift */; };
 		BCD97DFD2518453600F2B6FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD97DFC2518453600F2B6FC /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* Begin PBXFileReference section */
 		BC3676D0251929FE007677BB /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
 		BC3676D2251945FF007677BB /* ActivitiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesModel.swift; sourceTree = "<group>"; };
+		BC880D31252022A700E6BB3E /* ActivityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailView.swift; sourceTree = "<group>"; };
+		BCC51C132520FA9D0067AE21 /* CustomViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewModifiers.swift; sourceTree = "<group>"; };
 		BCD97DF52518453600F2B6FC /* Milestone 7-9 HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Milestone 7-9 HabitTracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD97DF82518453600F2B6FC /* Milestone_7_9_HabitTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone_7_9_HabitTrackerApp.swift; sourceTree = "<group>"; };
 		BCD97DFA2518453600F2B6FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,10 +63,12 @@
 				BCD97DF82518453600F2B6FC /* Milestone_7_9_HabitTrackerApp.swift */,
 				BC3676D2251945FF007677BB /* ActivitiesModel.swift */,
 				BC3676D0251929FE007677BB /* AddActivityView.swift */,
+				BC880D31252022A700E6BB3E /* ActivityDetailView.swift */,
 				BCD97DFA2518453600F2B6FC /* ContentView.swift */,
 				BCD97DFC2518453600F2B6FC /* Assets.xcassets */,
 				BCD97E012518453600F2B6FC /* Info.plist */,
 				BCD97DFE2518453600F2B6FC /* Preview Content */,
+				BCC51C132520FA9D0067AE21 /* CustomViewModifiers.swift */,
 			);
 			path = "Milestone 7-9 HabitTracker";
 			sourceTree = "<group>";
@@ -147,6 +153,8 @@
 				BC3676D1251929FE007677BB /* AddActivityView.swift in Sources */,
 				BCD97DFB2518453600F2B6FC /* ContentView.swift in Sources */,
 				BC3676D3251945FF007677BB /* ActivitiesModel.swift in Sources */,
+				BC880D32252022A700E6BB3E /* ActivityDetailView.swift in Sources */,
+				BCC51C142520FA9D0067AE21 /* CustomViewModifiers.swift in Sources */,
 				BCD97DF92518453600F2B6FC /* Milestone_7_9_HabitTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

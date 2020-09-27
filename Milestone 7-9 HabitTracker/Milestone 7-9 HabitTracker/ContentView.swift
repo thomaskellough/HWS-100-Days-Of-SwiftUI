@@ -15,16 +15,25 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(activities.activities) { activity in
-                    VStack {
-                        HStack {
-                            Text(activity.name)
-                            Spacer()
-                            Text("\(activity.count)")
+                ForEach(activities.activities.indices, id: \.self) { index in
+                    NavigationLink(destination: ActivityDetailView(activities: self.activities, index: index)) {
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text(activities.activities[index].name)
+                                    .font(.title)
+                                    .foregroundColor(.blue)
+                                Spacer()
+                                Text("\(activities.activities[index].count)")
+                                    .font(.title)
+                                    .foregroundColor(.green)
+                            }
+                            Text(activities.activities[index].description)
+                                .font(.subheadline)
+                                .multilineTextAlignment(.center)
                         }
-                        Text(activity.description)
                     }
                 }
+                .onDelete(perform: delete)
             }
             .navigationTitle("My Activities")
             .navigationBarItems(
@@ -38,6 +47,10 @@ struct ContentView: View {
                     })
             )
         }
+    }
+    
+    func delete(at offsets: IndexSet) {
+        activities.activities.remove(atOffsets: offsets)
     }
 }
 
