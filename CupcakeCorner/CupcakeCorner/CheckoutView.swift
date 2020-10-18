@@ -23,7 +23,7 @@ struct CheckoutView: View {
                         .scaledToFit()
                         .frame(width: geo.size.width)
                     
-                    Text("Your total is $\(self.order.cost, specifier: "%.2f")")
+                    Text("Your total is $\(self.order.orderDetails.cost, specifier: "%.2f")")
                         .font(.title)
                     
                     Button("Place Order") {
@@ -40,7 +40,7 @@ struct CheckoutView: View {
     }
     
     func placeOrder() {
-        guard let encoded = try? JSONEncoder().encode(order) else {
+        guard let encoded = try? JSONEncoder().encode(order.orderDetails) else {
             print("Failed to encode order")
             return
         }
@@ -54,15 +54,13 @@ struct CheckoutView: View {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
-                self.alertTitle = "Error"
-                self.alertMessage = "There was an error sending data to the server. Please check your internet connection and try again."
-                self.showingAlert = true
+                print("No data in response. \(error?.localizedDescription ?? "Unknown error")")
                 return
             }
             
-            if let decoded = try? JSONDecoder().decode(Order.self, from: data) {
+            if let decoded = try? JSONDecoder().decode(OrderDetails.self, from: data) {
                 self.alertTitle = "Thank you!"
-                self.alertMessage = "Your order for \(decoded.quantity)x \(Order.types[decoded.type].lowercased()) cupcakes is on its way!"
+                self.alertMessage = "Your order for \(decoded.quantity)x \(OrderDetails.types[decoded.type].lowercased()) cupcakes is on its way!"
                 self.showingAlert = true
             } else {
                 print("Invalid response from server")
@@ -75,6 +73,6 @@ struct CheckoutView: View {
 
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckoutView(order: Order())
+        CheckoutView(order: Order(order: OrderDetails()))
     }
 }

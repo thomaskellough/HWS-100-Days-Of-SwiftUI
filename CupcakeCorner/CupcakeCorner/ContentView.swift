@@ -9,34 +9,34 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var order = Order()
+    @StateObject var order: Order
     
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    Picker("Select your cupcake", selection: $order.type) {
-                        ForEach(Order.types.indices) { index in
-                            Text(Order.types[index])
+                    Picker("Select your cupcake", selection: $order.orderDetails.type) {
+                        ForEach(OrderDetails.types.indices) { index in
+                            Text(OrderDetails.types[index])
                         }
                     }
                     
-                    Stepper(value: $order.quantity, in: 3...20) {
-                        Text("Number of cakes: \(order.quantity)")
+                    Stepper(value: $order.orderDetails.quantity, in: 3...20) {
+                        Text("Number of cakes: \(order.orderDetails.quantity)")
                     }
                 }
                 
                 Section {
-                    Toggle(isOn: $order.specialRequestEnabled.animation()) {
+                    Toggle(isOn: $order.orderDetails.specialRequestEnabled.animation()) {
                         Text("Any special requests?")
                     }
                     
-                    if order.specialRequestEnabled {
-                        Toggle(isOn: $order.extraFrosting) {
+                    if order.orderDetails.specialRequestEnabled {
+                        Toggle(isOn: $order.orderDetails.extraFrosting) {
                             Text("Add extra frosting")
                         }
                         
-                        Toggle(isOn: $order.addSprinkles) {
+                        Toggle(isOn: $order.orderDetails.addSprinkles) {
                             Text("Add sprinkles")
                         }
                     }
@@ -57,6 +57,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(order: Order(order: OrderDetails()))
     }
 }
