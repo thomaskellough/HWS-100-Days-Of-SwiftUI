@@ -13,6 +13,7 @@
 		BCCA03262520FF1500EF03A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCA03252520FF1500EF03A7 /* Assets.xcassets */; };
 		BCCA03292520FF1500EF03A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCA03282520FF1500EF03A7 /* Preview Assets.xcassets */; };
 		BCE9C26E25367FE500499324 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE9C26D25367FE500499324 /* AddressView.swift */; };
+		BCE9C272253680F200499324 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE9C271253680F200499324 /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BCCA03282520FF1500EF03A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCCA032A2520FF1500EF03A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCE9C26D25367FE500499324 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		BCE9C271253680F200499324 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				BCE9C26D25367FE500499324 /* AddressView.swift */,
+				BCE9C271253680F200499324 /* CheckoutView.swift */,
 				BCCA03212520FF1400EF03A7 /* CupcakeCornerApp.swift */,
 				BCCA03232520FF1400EF03A7 /* ContentView.swift */,
 				BC2B8BAF25210B0800FDA727 /* Order.swift */,
@@ -146,6 +149,7 @@
 			files = (
 				BC2B8BB025210B0800FDA727 /* Order.swift in Sources */,
 				BCE9C26E25367FE500499324 /* AddressView.swift in Sources */,
+				BCE9C272253680F200499324 /* CheckoutView.swift in Sources */,
 				BCCA03242520FF1400EF03A7 /* ContentView.swift in Sources */,
 				BCCA03222520FF1400EF03A7 /* CupcakeCornerApp.swift in Sources */,
 			);
