@@ -30,6 +30,15 @@ struct DetailBookView: View {
                         .background(Color.black.opacity(0.75))
                         .clipShape(Capsule())
                         .offset(x: -5, y: -5)
+                    
+                    Text(self.book.date?.toShortDate() ?? Date().toShortDate())
+                        .font(.caption2)
+                        .fontWeight(.medium)
+                        .padding(8)
+                        .foregroundColor(.white)
+                        .background(Color.black.opacity(0.75))
+                        .clipShape(Rectangle())
+                        .offset(x: -UIScreen.main.bounds.width + 100, y: -5)
                 }
                 
                 Text(self.book.author ?? "Unknown author")
@@ -77,6 +86,7 @@ struct DetailBookView_Previews: PreviewProvider {
         book.genre = "Fantasy"
         book.rating = 4
         book.review = "This was a really great book; I really enjoyed it."
+        book.date = Date()
         
         return NavigationView {
             DetailBookView(book: book)

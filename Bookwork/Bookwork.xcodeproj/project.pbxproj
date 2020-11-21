@@ -10,6 +10,7 @@
 		BC03BF40256890F30036F88F /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC03BF3F256890F30036F88F /* RatingView.swift */; };
 		BC03BF43256893740036F88F /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC03BF42256893740036F88F /* EmojiRatingView.swift */; };
 		BC03BF46256896040036F88F /* DetailBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC03BF45256896040036F88F /* DetailBookView.swift */; };
+		BC03BF4C2568A29C0036F88F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC03BF4B2568A29C0036F88F /* Date+Extension.swift */; };
 		BCBCC2092568878C0005B6CC /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBCC2082568878C0005B6CC /* AddBookView.swift */; };
 		BCC819D0253C859600CB7BEA /* BookworkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC819CF253C859600CB7BEA /* BookworkApp.swift */; };
 		BCC819D2253C859600CB7BEA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC819D1253C859600CB7BEA /* ContentView.swift */; };
@@ -23,6 +24,7 @@
 		BC03BF3F256890F30036F88F /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		BC03BF42256893740036F88F /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
 		BC03BF45256896040036F88F /* DetailBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookView.swift; sourceTree = "<group>"; };
+		BC03BF4B2568A29C0036F88F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		BCBCC2082568878C0005B6CC /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		BCC819CC253C859500CB7BEA /* Bookwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC819CF253C859600CB7BEA /* BookworkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookworkApp.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC03BF4A2568A2860036F88F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BC03BF4B2568A29C0036F88F /* Date+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BCBCC2072568876E0005B6CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +86,7 @@
 		BCC819CE253C859500CB7BEA /* Bookwork */ = {
 			isa = PBXGroup;
 			children = (
+				BC03BF4A2568A2860036F88F /* Extensions */,
 				BCBCC2072568876E0005B6CC /* Views */,
 				BCC819CF253C859600CB7BEA /* BookworkApp.swift */,
 				BCC819D3253C859600CB7BEA /* Assets.xcassets */,
@@ -172,6 +183,7 @@
 				BC03BF40256890F30036F88F /* RatingView.swift in Sources */,
 				BCC819DC253C859600CB7BEA /* Bookwork.xcdatamodeld in Sources */,
 				BCBCC2092568878C0005B6CC /* AddBookView.swift in Sources */,
+				BC03BF4C2568A29C0036F88F /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
