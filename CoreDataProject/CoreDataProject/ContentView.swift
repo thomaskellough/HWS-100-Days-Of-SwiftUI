@@ -28,7 +28,7 @@ struct ContentView: View {
     @State private var sortDescriptors: [NSSortDescriptor] = [
         NSSortDescriptor(keyPath: \Candy.name, ascending: true)
     ]
-    @State private var predicate: String = ">"
+    @State private var predicate: Predicate = Predicate.beginsWith
     
     var body: some View {
         VStack {
@@ -51,23 +51,23 @@ struct ContentView: View {
             }
             
             Button("Filter Twix/Toblerone") {
-                self.predicate = ">"
+                self.predicate = Predicate.greaterThan
                 self.filterValue = "S"
             }
             
             Button("Filter All") {
-                self.predicate = ">"
+                self.predicate = Predicate.greaterThan
                 self.filterValue = "A"
             }
             
             Button("Begins with M") {
-                self.predicate = "BEGINSWITH"
+                self.predicate = Predicate.beginsWith
                 self.filterValue = "M"
             }
             
             Button("Ends with T") {
-                self.predicate = "ENDSWITH[c]"
-                self.filterValue = "T"
+                self.predicate = Predicate.endsWith
+                self.filterValue = "t"
             }
             
             Button("Sort A-Z") {
@@ -111,6 +111,26 @@ struct ContentView: View {
                     try? self.moc.save()
                 }
             }
+        }
+    }
+}
+
+enum Predicate: String {
+    case beginsWith
+    case endsWith
+    case greaterThan
+    case lessThan
+    
+    var value: String {
+        switch self {
+        case .beginsWith:
+            return "BEGINSWITH[c]"
+        case .endsWith:
+            return "ENDSWITH[c]"
+        case .greaterThan:
+            return ">"
+        case .lessThan:
+            return "<"
         }
     }
 }
