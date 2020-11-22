@@ -22,6 +22,10 @@ extension Candy {
     public var wrappedName: String {
         name ?? "Unknown Candy"
     }
+    
+    public var wrappedOrigin: String {
+        origin?.fullName ?? "Unknown Origin"
+    }
 
 }
 

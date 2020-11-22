@@ -24,8 +24,21 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: Country.entity(), sortDescriptors: []) var countries: FetchedResults<Country>
     
+    @State private var filterValue = "Switzerland"
+    @State private var sortDescriptors: [NSSortDescriptor] = [
+        NSSortDescriptor(keyPath: \Candy.name, ascending: true)
+    ]
+    
     var body: some View {
         VStack {
+            
+            FilteredList(filterKey: "name", filterValue: filterValue, sortDescriptors: sortDescriptors) { (candy: Candy) in
+                Text(candy.wrappedName)
+//                ForEach(country.candyArray, id: \.self) { candy in
+//                    Text(candy.wrappedName)
+//                }
+            }
+            
             List {
                 ForEach(countries, id: \.self) { country in
                     Section(header: Text(country.wrappedFullName)) {
@@ -34,6 +47,26 @@ struct ContentView: View {
                         }
                     }
                 }
+            }
+            
+            Button("Filter Twix/Toblerone") {
+                self.filterValue = "S"
+            }
+            
+            Button("Filter All") {
+                self.filterValue = "A"
+            }
+            
+            Button("Sort A-Z") {
+                self.sortDescriptors = [
+                    NSSortDescriptor(keyPath: \Candy.name, ascending: true)
+                ]
+            }
+            
+            Button("Sort Z-A") {
+                self.sortDescriptors = [
+                    NSSortDescriptor(keyPath: \Candy.name, ascending: false)
+                ]
             }
             
             Button("Add") {

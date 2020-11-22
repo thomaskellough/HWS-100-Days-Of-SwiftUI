@@ -17,13 +17,13 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
     let content: (T) -> Content
     
     var body: some View {
-        List(fetchRequest.wrappedValue, id: \.self) { singer in
-            self.content(singer)
+        List(fetchRequest.wrappedValue, id: \.self) { candy in
+            self.content(candy)
         }
     }
     
-    init(filterKey: String, filterValue: String, @ViewBuilder content: @escaping (T) -> Content) {
-        fetchRequest = FetchRequest<T>(entity: T.entity(), sortDescriptors: [], predicate: NSPredicate(format: "%K BEGINSWITH %@", filterKey, filterValue))
+    init(filterKey: String, filterValue: String, sortDescriptors: [NSSortDescriptor], @ViewBuilder content: @escaping (T) -> Content) {
+        fetchRequest = FetchRequest<T>(entity: T.entity(), sortDescriptors: sortDescriptors, predicate: NSPredicate(format: "%K > %@", filterKey, filterValue))
         self.content = content
     }
 }
