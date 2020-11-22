@@ -28,11 +28,12 @@ struct ContentView: View {
     @State private var sortDescriptors: [NSSortDescriptor] = [
         NSSortDescriptor(keyPath: \Candy.name, ascending: true)
     ]
+    @State private var predicate: String = ">"
     
     var body: some View {
         VStack {
             
-            FilteredList(filterKey: "name", filterValue: filterValue, sortDescriptors: sortDescriptors) { (candy: Candy) in
+            FilteredList(predicate: predicate, filterKey: "name", filterValue: filterValue, sortDescriptors: sortDescriptors) { (candy: Candy) in
                 Text(candy.wrappedName)
 //                ForEach(country.candyArray, id: \.self) { candy in
 //                    Text(candy.wrappedName)
@@ -50,11 +51,23 @@ struct ContentView: View {
             }
             
             Button("Filter Twix/Toblerone") {
+                self.predicate = ">"
                 self.filterValue = "S"
             }
             
             Button("Filter All") {
+                self.predicate = ">"
                 self.filterValue = "A"
+            }
+            
+            Button("Begins with M") {
+                self.predicate = "BEGINSWITH"
+                self.filterValue = "M"
+            }
+            
+            Button("Ends with T") {
+                self.predicate = "ENDSWITH[c]"
+                self.filterValue = "T"
             }
             
             Button("Sort A-Z") {
