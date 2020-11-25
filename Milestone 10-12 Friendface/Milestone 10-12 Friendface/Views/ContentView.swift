@@ -17,17 +17,25 @@ struct ContentView: View {
             VStack {
                 List {
                     ForEach(friends, id: \.id) { friend in
-                        VStack(alignment: .leading) {
+                        NavigationLink(destination: DetailFriendView(friend: friend)) {
                             HStack {
-                                Image(systemName: "person.crop.circle.fill")
-                                Text(friend.name)
-                                    .font(.title2)
-                                    .foregroundColor(.blue)
-                            }
-                            HStack {
-                                Image(systemName: "globe")
-                                Text(friend.company)
-                                    .font(.body)
+                                VStack(alignment: .leading) {
+                                    HStack {
+                                        Image(systemName: "person.crop.circle.fill")
+                                        Text(friend.name)
+                                            .font(.title2)
+                                            .foregroundColor(.blue)
+                                    }
+                                    HStack {
+                                        Image(systemName: "globe")
+                                        Text(friend.company)
+                                            .font(.body)
+                                    }
+                                }
+                                
+                                Spacer()
+                                
+                                friend.isActive ? Image(systemName: "checkmark.rectangle.fill").colorMultiply(.green) : Image(systemName: "xmark.rectangle.fill").colorMultiply(.red)
                             }
                         }
                     }
@@ -44,7 +52,6 @@ struct ContentView: View {
         networking.makeGetRequest() { completion in
             switch completion {
             case .success(let data):
-                print(String(data: data, encoding: .utf8))
                 do {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .iso8601

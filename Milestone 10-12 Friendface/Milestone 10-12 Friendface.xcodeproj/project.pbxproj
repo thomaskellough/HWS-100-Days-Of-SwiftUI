@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BCB39981256E16DA003C7C58 /* DetailFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB39980256E16DA003C7C58 /* DetailFriendView.swift */; };
 		BCF6CD74256B45E400A2EF6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6CD73256B45E400A2EF6B /* AppDelegate.swift */; };
 		BCF6CD76256B45E400A2EF6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6CD75256B45E400A2EF6B /* SceneDelegate.swift */; };
 		BCF6CD78256B45E400A2EF6B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6CD77256B45E400A2EF6B /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BCB39980256E16DA003C7C58 /* DetailFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFriendView.swift; sourceTree = "<group>"; };
 		BCF6CD70256B45E400A2EF6B /* Milestone 10-12 Friendface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Milestone 10-12 Friendface.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF6CD73256B45E400A2EF6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCF6CD75256B45E400A2EF6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				BCF6CD77256B45E400A2EF6B /* ContentView.swift */,
+				BCB39980256E16DA003C7C58 /* DetailFriendView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCB39981256E16DA003C7C58 /* DetailFriendView.swift in Sources */,
 				BCF6CD74256B45E400A2EF6B /* AppDelegate.swift in Sources */,
 				BCF6CD76256B45E400A2EF6B /* SceneDelegate.swift in Sources */,
 				BCF6CD8E256B460B00A2EF6B /* NetworkManager.swift in Sources */,
