@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		BCB39981256E16DA003C7C58 /* DetailFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB39980256E16DA003C7C58 /* DetailFriendView.swift */; };
+		BCF692C5256F59D10051FAFD /* Milestone_10_12_Friendface.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = BCF6CD79256B45E400A2EF6B /* Milestone_10_12_Friendface.xcdatamodeld */; };
+		BCF692CB256F5DE60051FAFD /* CDFriend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF692C9256F5DE60051FAFD /* CDFriend+CoreDataClass.swift */; };
+		BCF692CC256F5DE60051FAFD /* CDFriend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF692CA256F5DE60051FAFD /* CDFriend+CoreDataProperties.swift */; };
 		BCF6CD74256B45E400A2EF6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6CD73256B45E400A2EF6B /* AppDelegate.swift */; };
 		BCF6CD76256B45E400A2EF6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6CD75256B45E400A2EF6B /* SceneDelegate.swift */; };
 		BCF6CD78256B45E400A2EF6B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6CD77256B45E400A2EF6B /* ContentView.swift */; };
-		BCF6CD7B256B45E400A2EF6B /* Milestone_10_12_Friendface.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCF6CD79256B45E400A2EF6B /* Milestone_10_12_Friendface.xcdatamodeld */; };
 		BCF6CD7D256B45E600A2EF6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF6CD7C256B45E600A2EF6B /* Assets.xcassets */; };
 		BCF6CD80256B45E600A2EF6B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF6CD7F256B45E600A2EF6B /* Preview Assets.xcassets */; };
 		BCF6CD83256B45E600A2EF6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCF6CD81256B45E600A2EF6B /* LaunchScreen.storyboard */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		BCB39980256E16DA003C7C58 /* DetailFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFriendView.swift; sourceTree = "<group>"; };
+		BCF692C9256F5DE60051FAFD /* CDFriend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFriend+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		BCF692CA256F5DE60051FAFD /* CDFriend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFriend+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		BCF6CD70256B45E400A2EF6B /* Milestone 10-12 Friendface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Milestone 10-12 Friendface.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF6CD73256B45E400A2EF6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCF6CD75256B45E400A2EF6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 		BCF6CD91256B46F100A2EF6B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BCF692C9256F5DE60051FAFD /* CDFriend+CoreDataClass.swift */,
+				BCF692CA256F5DE60051FAFD /* CDFriend+CoreDataProperties.swift */,
 				BCF6CD92256B46FB00A2EF6B /* Friend.swift */,
 			);
 			path = Models;
@@ -168,6 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF692C5256F59D10051FAFD /* Milestone_10_12_Friendface.xcdatamodeld in Resources */,
 				BCF6CD83256B45E600A2EF6B /* LaunchScreen.storyboard in Resources */,
 				BCF6CD80256B45E600A2EF6B /* Preview Assets.xcassets in Resources */,
 				BCF6CD7D256B45E600A2EF6B /* Assets.xcassets in Resources */,
@@ -183,11 +190,12 @@
 			files = (
 				BCB39981256E16DA003C7C58 /* DetailFriendView.swift in Sources */,
 				BCF6CD74256B45E400A2EF6B /* AppDelegate.swift in Sources */,
+				BCF692CC256F5DE60051FAFD /* CDFriend+CoreDataProperties.swift in Sources */,
 				BCF6CD76256B45E400A2EF6B /* SceneDelegate.swift in Sources */,
 				BCF6CD8E256B460B00A2EF6B /* NetworkManager.swift in Sources */,
+				BCF692CB256F5DE60051FAFD /* CDFriend+CoreDataClass.swift in Sources */,
 				BCF6CD93256B46FB00A2EF6B /* Friend.swift in Sources */,
 				BCF6CD78256B45E400A2EF6B /* ContentView.swift in Sources */,
-				BCF6CD7B256B45E400A2EF6B /* Milestone_10_12_Friendface.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,12 +5,14 @@
 //  Created by Thomas Kellough on 11/22/20.
 //
 
+import CoreData
 import SwiftUI
 
 struct ContentView: View {
-    
-    let networking = Networking()
+
+    @Environment(\.managedObjectContext) var moc
     @State private var friends: [Friend] = []
+    let networking = Networking()
     
     var body: some View {
         NavigationView {
@@ -57,7 +59,19 @@ struct ContentView: View {
                     decoder.dateDecodingStrategy = .iso8601
                     
                     let decoded = try decoder.decode([Friend].self, from: data)
-                    print("Success!")
+                    for friend in decoded {
+                        let newFriend = CDFriend(context: self.moc)
+                        newFriend.id = friend.id
+                        newFriend.isActive = friend.isActive
+                        newFriend.name = friend.name
+                        newFriend.age = Int16(friend.age)
+                        newFriend.company = friend.company
+                        newFriend.email = friend.email
+                        newFriend.address = friend.address
+                        newFriend.about = friend.about
+                        newFriend.registered = friend.registered
+                    }
+                    
                     self.friends = decoded.sorted {
                         $0.name < $1.name
                     }
