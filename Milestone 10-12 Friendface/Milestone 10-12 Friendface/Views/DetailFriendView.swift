@@ -10,6 +10,7 @@ import SwiftUI
 struct DetailFriendView: View {
     
     let friend: Friend
+    var allFriends: [Friend]
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -20,7 +21,7 @@ struct DetailFriendView: View {
             }
             HStack {
                 Image(systemName: "house.fill")
-                Text(friend.address)
+                Text(friend.cityAndState)
                 Spacer()
             }
             HStack {
@@ -29,9 +30,22 @@ struct DetailFriendView: View {
                 Spacer()
             }
             Text("Age: \(friend.age)")
+            Text("Total friends: \(friend.friends.count)")
                 .padding(.bottom)
             Text("About:\n\(friend.about)")
             
+            VStack(alignment: .leading) {
+                Text("Friends")
+                    .font(.title3)
+                ForEach(friend.friends, id: \.name) { friendOfFriend in
+                    NavigationLink(
+                        destination: DetailFriendView(friend: allFriends.first(where: {$0.name == friendOfFriend.name})!, allFriends: allFriends),
+                        label: {
+                            Text(friendOfFriend.name)
+                                .foregroundColor(.blue)
+                        })
+                }
+            }
             Spacer()
         }
         .padding()
@@ -42,6 +56,6 @@ struct DetailFriendView: View {
 struct DetailFriendView_Previews: PreviewProvider {
     static var previews: some View {
         let testFriend = Friend(id: UUID(), isActive: true, name: "John Smith", age: 20, company: "Apple", email: "johnsmith@apple.com", address: "123 Main St", about: "About John Smith", registered: Date(), tags: [], friends: [])
-        DetailFriendView(friend: testFriend)
+        DetailFriendView(friend: testFriend, allFriends: [testFriend])
     }
 }

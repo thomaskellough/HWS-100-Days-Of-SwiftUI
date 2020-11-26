@@ -17,7 +17,7 @@ struct ContentView: View {
             VStack {
                 List {
                     ForEach(friends, id: \.id) { friend in
-                        NavigationLink(destination: DetailFriendView(friend: friend)) {
+                        NavigationLink(destination: DetailFriendView(friend: friend, allFriends: friends)) {
                             HStack {
                                 VStack(alignment: .leading) {
                                     HStack {

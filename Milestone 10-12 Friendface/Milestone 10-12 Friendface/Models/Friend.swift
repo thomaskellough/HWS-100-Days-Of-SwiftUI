@@ -23,6 +23,13 @@ struct Friend: Codable {
     var friendList: String {
         return friends.map { $0.name }.joined(separator: ", ")
     }
+    
+    var cityAndState: String {
+        let addressParts = address.split(separator: ",")
+        let city = addressParts[1]
+        let state = addressParts[2]
+        return "\(city), \(state)"
+    }
 }
 
 struct Connection: Codable {
