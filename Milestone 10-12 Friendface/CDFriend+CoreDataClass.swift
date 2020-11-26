@@ -2,7 +2,7 @@
 //  CDFriend+CoreDataClass.swift
 //  Milestone 10-12 Friendface
 //
-//  Created by Thomas Kellough on 11/25/20.
+//  Created by Thomas Kellough on 11/26/20.
 //
 //
 

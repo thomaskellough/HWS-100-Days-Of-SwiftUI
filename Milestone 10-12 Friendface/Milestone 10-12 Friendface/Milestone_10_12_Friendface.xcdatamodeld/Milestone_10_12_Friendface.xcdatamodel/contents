@@ -6,17 +6,18 @@
         <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="company" optional="YES" attributeType="String"/>
         <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="friends" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="isActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="registered" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
-                <constraint value="id"/>
+                <constraint value="name"/>
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="CDFriend" positionX="-63" positionY="-18" width="128" height="178"/>
+        <element name="CDFriend" positionX="-63" positionY="-18" width="128" height="193"/>
     </elements>
 </model>

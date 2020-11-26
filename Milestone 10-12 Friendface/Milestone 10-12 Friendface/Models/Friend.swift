@@ -26,7 +26,7 @@ struct Friend: Codable {
     
     var cityAndState: String {
         let addressParts = address.split(separator: ",")
-        let city = addressParts[1]
+        let city = addressParts[1].trimmingCharacters(in: .whitespacesAndNewlines)
         let state = addressParts[2]
         return "\(city), \(state)"
     }

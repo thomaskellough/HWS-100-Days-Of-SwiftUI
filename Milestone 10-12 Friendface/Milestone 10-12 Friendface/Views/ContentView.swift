@@ -9,35 +9,38 @@ import CoreData
 import SwiftUI
 
 struct ContentView: View {
-
+    
     @Environment(\.managedObjectContext) var moc
-    @State private var friends: [Friend] = []
+    @FetchRequest(entity: CDFriend.entity(), sortDescriptors: [
+        NSSortDescriptor(keyPath: \CDFriend.name, ascending: true),
+    ]) var cdFriends: FetchedResults<CDFriend>
+    
     let networking = Networking()
     
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(friends, id: \.id) { friend in
-                        NavigationLink(destination: DetailFriendView(friend: friend, allFriends: friends)) {
+                    ForEach(cdFriends, id: \.id) { friend in
+                        NavigationLink(destination: DetailFriendView(friend: friend)) {
                             HStack {
                                 VStack(alignment: .leading) {
                                     HStack {
                                         Image(systemName: "person.crop.circle.fill")
-                                        Text(friend.name)
+                                        Text(friend.unwrappedName)
                                             .font(.title2)
                                             .foregroundColor(.blue)
                                     }
                                     HStack {
                                         Image(systemName: "globe")
-                                        Text(friend.company)
+                                        Text(friend.unwrappedCompany)
                                             .font(.body)
                                     }
                                 }
                                 
                                 Spacer()
                                 
-                                friend.isActive ? Image(systemName: "checkmark.rectangle.fill").colorMultiply(.green) : Image(systemName: "xmark.rectangle.fill").colorMultiply(.red)
+                                friend.isActive ? Image(systemName: "checkmark.rectangle.fill").foregroundColor(.green) : Image(systemName: "xmark.rectangle.fill").foregroundColor(.red)
                             }
                         }
                     }
@@ -51,6 +54,7 @@ struct ContentView: View {
     }
     
     func getFriends() {
+        if !cdFriends.isEmpty { return }
         networking.makeGetRequest() { completion in
             switch completion {
             case .success(let data):
@@ -70,11 +74,13 @@ struct ContentView: View {
                         newFriend.address = friend.address
                         newFriend.about = friend.about
                         newFriend.registered = friend.registered
+                        newFriend.friends = friend.friendList
                     }
                     
-                    self.friends = decoded.sorted {
-                        $0.name < $1.name
+                    if moc.hasChanges {
+                        try? self.moc.save()
                     }
+                    
                 } catch let error {
                     print("Error! \n\(error.localizedDescription)")
                 }
