@@ -11,7 +11,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var image: Image?
+    @State private var inputImage: UIImage?
     @State private var filterIntensity = 0.5
+    @State private var showingImagePicker = false
+    @State private var currentFilter = CIFilter.sepiaTone()
+    
+    // Contexts are expensive to create, so it's a good idea to create it once and keep it alive
+    let context = CIContext()
     
     var body: some View {
         NavigationView {
@@ -31,7 +37,7 @@ struct ContentView: View {
                     }
                 }
                 .onTapGesture {
-                    // select an image
+                    self.showingImagePicker = true
                 }
                 
                 HStack {
@@ -53,6 +59,28 @@ struct ContentView: View {
             }
             .padding([.horizontal, .bottom])
             .navigationBarTitle("Instafilter")
+            .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+                ImagePicker(image: self.$inputImage)
+            }
+        }
+    }
+    
+    func loadImage() {
+        guard let inputImage = inputImage else { return }
+        
+        let beginImage = CIImage(image: inputImage)
+        currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+        applyProcessing()
+    }
+    
+    func applyProcessing() {
+        currentFilter.intensity = Float(filterIntensity)
+        
+        guard let outputImage = currentFilter.outputImage else { return }
+        
+        if let cgImg = context.createCGImage(outputImage, from: outputImage.extent) {
+            let uiImage = UIImage(cgImage: cgImg)
+            image = Image(uiImage: uiImage)
         }
     }
 }
