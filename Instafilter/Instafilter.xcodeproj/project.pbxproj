@@ -14,6 +14,7 @@
 		BCABC7C225707E9600F821FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCABC7C125707E9600F821FC /* Assets.xcassets */; };
 		BCABC7C525707E9600F821FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCABC7C425707E9600F821FC /* Preview Assets.xcassets */; };
 		BCABC7C825707E9600F821FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCABC7C625707E9600F821FC /* LaunchScreen.storyboard */; };
+		BCABC7D12570896800F821FC /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCABC7D02570896800F821FC /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BCABC7C425707E9600F821FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCABC7C725707E9600F821FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCABC7C925707E9600F821FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCABC7D02570896800F821FC /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				BCABC7C925707E9600F821FC /* Info.plist */,
 				BCABC7BE25707E9500F821FC /* Instafilter.xcdatamodeld */,
 				BCABC7C325707E9600F821FC /* Preview Content */,
+				BCABC7D02570896800F821FC /* ImagePicker.swift */,
 			);
 			path = Instafilter;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			files = (
 				BCABC7B925707E9500F821FC /* AppDelegate.swift in Sources */,
 				BCABC7C025707E9500F821FC /* Instafilter.xcdatamodeld in Sources */,
+				BCABC7D12570896800F821FC /* ImagePicker.swift in Sources */,
 				BCABC7BB25707E9500F821FC /* SceneDelegate.swift in Sources */,
 				BCABC7BD25707E9500F821FC /* ContentView.swift in Sources */,
 			);
