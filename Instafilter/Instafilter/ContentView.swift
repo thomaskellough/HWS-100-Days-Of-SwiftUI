@@ -5,29 +5,36 @@
 //  Created by Thomas Kellough on 11/26/20.
 //
 
+import CoreImage
+import CoreImage.CIFilterBuiltins
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State private var showingActionSheet = false
-    @State private var backgroundColor = Color.white
+    @State private var image: Image?
     
     var body: some View {
         VStack {
-            Text("Hello, world!")
-                .frame(width: 300, height: 300)
-                .background(backgroundColor)
-                .onTapGesture {
-                    self.showingActionSheet = true
-                }
-                .actionSheet(isPresented: $showingActionSheet) {
-                    ActionSheet(title: Text("Change background"), message: Text("Select a new color"), buttons: [
-                        .default(Text("Red")) { self.backgroundColor = .red },
-                        .default(Text("Green")) { self.backgroundColor = .green },
-                        .default(Text("Blue")) { self.backgroundColor = .blue },
-                        .cancel()
-                    ])
-                }
+            image?
+                .resizable()
+                .scaledToFit()
+        }
+        .onAppear(perform: loadImage)
+    }
+    
+    func loadImage() {
+        guard let inputImage = UIImage(named: "flash") else { return }
+        let beginImage = CIImage(image: inputImage)
+        
+        let context = CIContext()
+        guard let currentFilter = CIFilter(name: "CITwirlDistortion") else { return }
+        currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+        currentFilter.setValue(2000, forKey: kCIInputRadiusKey)
+        currentFilter.setValue(CIVector(x: inputImage.size.width / 2, y: inputImage.size.height / 2), forKey: kCIInputCenterKey)
+        
+        guard let outputImage = currentFilter.outputImage else { return }
+        if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
+            let uiImage = UIImage(cgImage: cgimg)
+            image = Image(uiImage: uiImage)
         }
     }
 }
