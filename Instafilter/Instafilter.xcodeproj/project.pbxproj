@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC81D2DB2570ABA4004AB5E5 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC81D2DA2570ABA4004AB5E5 /* ImageSaver.swift */; };
 		BCABC7B925707E9500F821FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCABC7B825707E9500F821FC /* AppDelegate.swift */; };
 		BCABC7BB25707E9500F821FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCABC7BA25707E9500F821FC /* SceneDelegate.swift */; };
 		BCABC7BD25707E9500F821FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCABC7BC25707E9500F821FC /* ContentView.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC81D2DA2570ABA4004AB5E5 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		BCABC7B525707E9500F821FC /* Instafilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instafilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCABC7B825707E9500F821FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCABC7BA25707E9500F821FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				BCABC7BE25707E9500F821FC /* Instafilter.xcdatamodeld */,
 				BCABC7C325707E9600F821FC /* Preview Content */,
 				BCABC7D02570896800F821FC /* ImagePicker.swift */,
+				BC81D2DA2570ABA4004AB5E5 /* ImageSaver.swift */,
 			);
 			path = Instafilter;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCABC7B925707E9500F821FC /* AppDelegate.swift in Sources */,
+				BC81D2DB2570ABA4004AB5E5 /* ImageSaver.swift in Sources */,
 				BCABC7C025707E9500F821FC /* Instafilter.xcdatamodeld in Sources */,
 				BCABC7D12570896800F821FC /* ImagePicker.swift in Sources */,
 				BCABC7BB25707E9500F821FC /* SceneDelegate.swift in Sources */,
