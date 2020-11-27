@@ -59,7 +59,7 @@ struct ContentView: View {
                 }.padding(.vertical)
                 
                 HStack {
-                    Button("Change Filter") {
+                    Button(currentFilter.name.replacingOccurrences(of: "CI", with: "")) {
                         self.showingFilterSheet = true
                     }
                     
