@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var filterIntensity = 0.5
     @State private var showingImagePicker = false
     @State private var showingFilterSheet = false
+    @State private var showingNoImageError = false
     @State private var currentFilter: CIFilter = CIFilter.sepiaTone()
     
     // Contexts are expensive to create, so it's a good idea to create it once and keep it alive
@@ -65,7 +66,10 @@ struct ContentView: View {
                     Spacer()
                     
                     Button("Save") {
-                        guard let processedImage = self.processedImage else { return }
+                        guard let processedImage = self.processedImage else {
+                            self.showingNoImageError = true
+                            return
+                        }
                         
                         let imageSaver = ImageSaver()
                         imageSaver.successHandler = {
@@ -95,6 +99,9 @@ struct ContentView: View {
                     .default(Text("Unsharp Mask")) { self.setFilter(CIFilter.unsharpMask()) },
                     .default(Text("Vignette")) { self.setFilter(CIFilter.vignette()) }
                 ])
+            }
+            .alert(isPresented: $showingNoImageError) {
+                Alert(title: Text("Error"), message: Text("There is no image to save!"), dismissButton: .default(Text("OK")))
             }
         }
     }
