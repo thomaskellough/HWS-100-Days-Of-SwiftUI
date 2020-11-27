@@ -12,6 +12,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var image: Image?
     @State private var inputImage: UIImage?
+    @State private var processedImage: UIImage?
     @State private var filterIntensity = 0.5
     @State private var showingImagePicker = false
     @State private var showingFilterSheet = false
@@ -64,7 +65,18 @@ struct ContentView: View {
                     Spacer()
                     
                     Button("Save") {
-                        // save the picture
+                        guard let processedImage = self.processedImage else { return }
+                        
+                        let imageSaver = ImageSaver()
+                        imageSaver.successHandler = {
+                            print("Success!")
+                        }
+                        
+                        imageSaver.errorHandler = {
+                            print("Ooops: \($0.localizedDescription)")
+                        }
+                        
+                        imageSaver.writeToPhotoAlbum(image: processedImage)
                     }
                 }
             }
@@ -112,6 +124,7 @@ struct ContentView: View {
         if let cgImg = context.createCGImage(outputImage, from: outputImage.extent) {
             let uiImage = UIImage(cgImage: cgImg)
             image = Image(uiImage: uiImage)
+            processedImage = uiImage
         }
     }
 }
