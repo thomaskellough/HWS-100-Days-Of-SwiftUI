@@ -15,6 +15,7 @@
 		BC18B5C52571CF650024D872 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC18B5C42571CF650024D872 /* Preview Assets.xcassets */; };
 		BC18B5C82571CF650024D872 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC18B5C62571CF650024D872 /* LaunchScreen.storyboard */; };
 		BC18B5D72571D5660024D872 /* FileManage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC18B5D62571D5660024D872 /* FileManage+Extension.swift */; };
+		BC18B5DA2571D9530024D872 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC18B5D92571D9530024D872 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BC18B5C72571CF650024D872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC18B5C92571CF650024D872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC18B5D62571D5660024D872 /* FileManage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManage+Extension.swift"; sourceTree = "<group>"; };
+		BC18B5D92571D9530024D872 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				BC18B5B82571CF650024D872 /* AppDelegate.swift */,
 				BC18B5BA2571CF650024D872 /* SceneDelegate.swift */,
 				BC18B5BC2571CF650024D872 /* ContentView.swift */,
+				BC18B5D92571D9530024D872 /* MapView.swift */,
 				BC18B5C12571CF650024D872 /* Assets.xcassets */,
 				BC18B5C62571CF650024D872 /* LaunchScreen.storyboard */,
 				BC18B5C92571CF650024D872 /* Info.plist */,
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC18B5B92571CF650024D872 /* AppDelegate.swift in Sources */,
+				BC18B5DA2571D9530024D872 /* MapView.swift in Sources */,
 				BC18B5D72571D5660024D872 /* FileManage+Extension.swift in Sources */,
 				BC18B5C02571CF650024D872 /* BucketList.xcdatamodeld in Sources */,
 				BC18B5BB2571CF650024D872 /* SceneDelegate.swift in Sources */,
