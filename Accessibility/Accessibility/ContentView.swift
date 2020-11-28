@@ -25,15 +25,13 @@ struct ContentView: View {
     @State private var selectedPicture = Int.random(in: 0...3)
     
     var body: some View {
-        Image(pictures[selectedPicture])
-            .resizable()
-            .scaledToFit()
-            .onTapGesture {
-                self.selectedPicture = Int.random(in: 0...3)
-            }
-            .accessibility(label: Text(labels[selectedPicture]))
-            .accessibility(addTraits: .isButton)
-            .accessibility(removeTraits: .isImage)
+        VStack {
+            Text("Your score is")
+            Text("1000")
+                .font(.title)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibility(label: Text("Your score is 1000"))
     }
 
 }
