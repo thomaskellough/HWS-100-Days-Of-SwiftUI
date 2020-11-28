@@ -18,6 +18,10 @@ struct ContentView: View {
     @State private var locations = [CodableMKPointAnnotation]()
     @State private var showingEditScreen = false
     
+    @State private var errorTitle = ""
+    @State private var errorMessage = ""
+    @State private var showingError = false
+    
     var body: some View {
         ZStack {
             if isUnlocked {
@@ -36,6 +40,9 @@ struct ContentView: View {
             Alert(title: Text(selectedPlace?.title ?? "Unknown"), message: Text(selectedPlace?.subtitle ?? "Missing place information"), primaryButton: .default(Text("OK")), secondaryButton: .default(Text("Edit")) {
                 self.showingEditScreen = true
             })
+        }
+        .alert(isPresented: $showingError) {
+            Alert(title: Text(self.errorTitle), message: Text(self.errorMessage), primaryButton: .default(Text("OK")), secondaryButton: .cancel())
         }
         .sheet(isPresented: $showingEditScreen, onDismiss: saveData) {
             if self.selectedPlace != nil {
@@ -78,12 +85,16 @@ struct ContentView: View {
                     if success {
                         self.isUnlocked = true
                     } else {
-                        // there was a problem
+                        self.errorTitle = "Biometrics failed."
+                        self.errorMessage = "Please try again"
+                        self.showingError = true
                     }
                 }
             }
         } else {
-            // no biometrics
+            self.errorTitle = "Oops!"
+            self.errorMessage = "This device is not configured for biometrics. Unable to unlock data."
+            self.showingError = true
         }
     }
 }
