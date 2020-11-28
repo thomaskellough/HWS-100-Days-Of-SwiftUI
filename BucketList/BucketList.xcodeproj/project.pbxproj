@@ -21,6 +21,7 @@
 		BC18B5EA2572B9700024D872 /* MKPointAnnotation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC18B5E92572B9700024D872 /* MKPointAnnotation+Extension.swift */; };
 		BC18B5F02572BFE40024D872 /* WikiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC18B5EF2572BFE40024D872 /* WikiModel.swift */; };
 		BC18B5F52572D05C0024D872 /* MKPointAnnotation+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC18B5F42572D05C0024D872 /* MKPointAnnotation+Codable.swift */; };
+		BC29910A2572E6D70045BCF9 /* UnlockedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2991092572E6D70045BCF9 /* UnlockedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		BC18B5E92572B9700024D872 /* MKPointAnnotation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation+Extension.swift"; sourceTree = "<group>"; };
 		BC18B5EF2572BFE40024D872 /* WikiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiModel.swift; sourceTree = "<group>"; };
 		BC18B5F42572D05C0024D872 /* MKPointAnnotation+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation+Codable.swift"; sourceTree = "<group>"; };
+		BC2991092572E6D70045BCF9 /* UnlockedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				BC18B5BC2571CF650024D872 /* ContentView.swift */,
 				BC18B5D92571D9530024D872 /* MapView.swift */,
 				BC18B5E52572B8640024D872 /* EditView.swift */,
+				BC2991092572E6D70045BCF9 /* UnlockedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				BC18B5E62572B8640024D872 /* EditView.swift in Sources */,
 				BC18B5F52572D05C0024D872 /* MKPointAnnotation+Codable.swift in Sources */,
 				BC18B5F02572BFE40024D872 /* WikiModel.swift in Sources */,
+				BC29910A2572E6D70045BCF9 /* UnlockedView.swift in Sources */,
 				BC18B5D72571D5660024D872 /* FileManage+Extension.swift in Sources */,
 				BC18B5C02571CF650024D872 /* BucketList.xcdatamodeld in Sources */,
 				BC18B5E22572B6960024D872 /* MKPointAnnotation+ObservableObject.swift in Sources */,
