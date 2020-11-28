@@ -14,6 +14,7 @@
 		BC18B5C22571CF650024D872 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC18B5C12571CF650024D872 /* Assets.xcassets */; };
 		BC18B5C52571CF650024D872 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC18B5C42571CF650024D872 /* Preview Assets.xcassets */; };
 		BC18B5C82571CF650024D872 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC18B5C62571CF650024D872 /* LaunchScreen.storyboard */; };
+		BC18B5D72571D5660024D872 /* FileManage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC18B5D62571D5660024D872 /* FileManage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BC18B5C42571CF650024D872 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC18B5C72571CF650024D872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC18B5C92571CF650024D872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC18B5D62571D5660024D872 /* FileManage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		BC18B5B72571CF650024D872 /* BucketList */ = {
 			isa = PBXGroup;
 			children = (
+				BC18B5D02571D2620024D872 /* Extensions */,
 				BC18B5B82571CF650024D872 /* AppDelegate.swift */,
 				BC18B5BA2571CF650024D872 /* SceneDelegate.swift */,
 				BC18B5BC2571CF650024D872 /* ContentView.swift */,
@@ -76,6 +79,14 @@
 				BC18B5C42571CF650024D872 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BC18B5D02571D2620024D872 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BC18B5D62571D5660024D872 /* FileManage+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC18B5B92571CF650024D872 /* AppDelegate.swift in Sources */,
+				BC18B5D72571D5660024D872 /* FileManage+Extension.swift in Sources */,
 				BC18B5C02571CF650024D872 /* BucketList.xcdatamodeld in Sources */,
 				BC18B5BB2571CF650024D872 /* SceneDelegate.swift in Sources */,
 				BC18B5BD2571CF650024D872 /* ContentView.swift in Sources */,

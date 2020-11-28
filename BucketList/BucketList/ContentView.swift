@@ -9,31 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let users = [
-        User(firstName: "Harry", lastName: "Potter"),
-        User(firstName: "Hermione", lastName: "Granger"),
-        User(firstName: "Ronalds", lastName: "Weasley")
-    ].sorted()
-    
     var body: some View {
-        List(users) { user in
-            Text("\(user.firstName) \(user.lastName)")
-        }
+        Text("Hello World")
+            .onTapGesture {
+                let str = "Test Message"
+                let url = FileManager().documentDirectory.appendingPathComponent("message.txt")
+                
+                do {
+                    try str.write(to: url, atomically: true, encoding: .utf8)
+                    let input = try String(contentsOf: url)
+                    print(input)
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-struct User: Identifiable, Comparable {
-    let id = UUID()
-    let firstName: String
-    let lastName: String
-    
-    static func < (lhs: User, rhs: User) -> Bool {
-        lhs.lastName < rhs.lastName
     }
 }
