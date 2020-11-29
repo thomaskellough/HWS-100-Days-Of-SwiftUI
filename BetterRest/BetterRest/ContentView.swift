@@ -29,43 +29,53 @@ struct ContentView: View {
                 }
                 
                 Section(header: Text("Desired amount of sleep")) {
-                    Stepper(onIncrement: {
-                        self.sleepAmount += 0.25
-                        if self.sleepAmount > 12 {
-                            self.sleepAmount = 12
+                    HStack {
+                        Stepper(onIncrement: {
+                            self.sleepAmount += 0.25
+                            if self.sleepAmount > 12 {
+                                self.sleepAmount = 12
+                            }
+                            self.calculateBedtime()
+                        }, onDecrement: {
+                            self.sleepAmount -= 0.25
+                            if self.sleepAmount < 4 {
+                                self.sleepAmount = 4
+                            }
+                            self.calculateBedtime()
+                        }) {
+                            Text("\(sleepAmount, specifier: "%g") hours of sleep")
                         }
-                        self.calculateBedtime()
-                    }, onDecrement: {
-                        self.sleepAmount -= 0.25
-                        if self.sleepAmount < 4 {
-                            self.sleepAmount = 4
-                        }
-                        self.calculateBedtime()
-                    }) {
-                        Text("\(sleepAmount, specifier: "%g") hours of sleep")
+                        .accessibility(value: Text("\(self.sleepAmount == 1.0 ? "1 hour" : "\(String(format: "%.2f", self.sleepAmount)) hours")"))
                     }
+                    .accessibilityElement(children: .combine)
+                    .accessibility(label: Text("Desired amount of sleep is \(String(format: "%.2f", self.sleepAmount)) hours"))
                 }
                 
                 Section(header: Text("Daily coffee intake")) {
-                    Stepper(onIncrement: {
-                        self.coffeeAmount += 1
-                        if self.coffeeAmount > 10 {
-                            self.coffeeAmount = 10
+                    HStack {
+                        Stepper(onIncrement: {
+                            self.coffeeAmount += 1
+                            if self.coffeeAmount > 10 {
+                                self.coffeeAmount = 10
+                            }
+                            self.calculateBedtime()
+                        }, onDecrement: {
+                            self.coffeeAmount -= 1
+                            if self.coffeeAmount < 0 {
+                                self.coffeeAmount = 0
+                            }
+                            self.calculateBedtime()
+                        }) {
+                            if self.coffeeAmount == 1 {
+                                Text("\(coffeeAmount) cup of coffee")
+                            } else {
+                                Text("\(coffeeAmount) cups of coffee")
+                            }
                         }
-                        self.calculateBedtime()
-                    }, onDecrement: {
-                        self.coffeeAmount -= 1
-                        if self.coffeeAmount < 0 {
-                            self.coffeeAmount = 0
-                        }
-                        self.calculateBedtime()
-                    }) {
-                        if self.coffeeAmount == 1 {
-                            Text("\(coffeeAmount) cup of coffee")
-                        } else {
-                            Text("\(coffeeAmount) cups of coffee")
-                        }
+                        .accessibility(value: Text("\(self.coffeeAmount == 1 ? "1 cup" : "\(self.coffeeAmount) cups")"))
                     }
+                    .accessibilityElement(children: .combine)
+                    .accessibility(label: Text("Daily coffee intake is \(self.coffeeAmount) cups"))
                 }
                 
                 
