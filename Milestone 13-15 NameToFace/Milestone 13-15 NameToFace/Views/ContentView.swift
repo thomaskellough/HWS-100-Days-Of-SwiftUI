@@ -19,14 +19,12 @@ struct ContentView: View {
     ]) var people: FetchedResults<Person>
     
     // MARK: Image Picker properties
-//    @State private var showingImagePicker = false
     @State private var image: Image?
     @State private var inputImage: UIImage?
     @State private var processedImage: UIImage?
     
     @State private var activeSheet = ActiveSheet.addingPhoto
     @State private var showingSheet = false
-//    @State private var showingAddNameView = false
     
     var body: some View {
         NavigationView {
@@ -34,7 +32,7 @@ struct ContentView: View {
                 if people.count > 0 {
                     List(people) { person in
                         NavigationLink(
-                            destination: DetailView(image: person.image),
+                            destination: DetailView(person: person),
                             label: {
                                 HStack {
                                     person.image!
@@ -83,12 +81,7 @@ struct ContentView: View {
         } else {
             self.showingSheet = false
             self.activeSheet = .addingPhoto
-            saveImage()
         }
-    }
-    
-    func saveImage() {
-        // save image to core data
     }
 }
 

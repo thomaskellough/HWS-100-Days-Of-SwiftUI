@@ -6,10 +6,10 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
+import MapKit
 import SwiftUI
-
 
 extension Person {
 
@@ -17,11 +17,25 @@ extension Person {
         return NSFetchRequest<Person>(entityName: "Person")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var imageUrl: UUID?
-    
+    @NSManaged public var name: String?
+    @NSManaged public var latitude: String?
+    @NSManaged public var longitude: String?
+
     public var unwrappedName: String {
         name?.capitalized ?? "Unknown"
+    }
+    
+    public var location: CLLocationCoordinate2D? {
+        if let lat = Double(latitude ?? "") {
+            if let lon = Double(longitude ?? "") {
+                let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                
+                return coordinate
+            }
+        }
+        
+        return nil
     }
     
     public var image: Image? {
@@ -41,7 +55,6 @@ extension Person {
         
         return nil
     }
-
 }
 
 extension Person : Identifiable {

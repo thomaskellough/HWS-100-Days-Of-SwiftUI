@@ -11,8 +11,10 @@
 		BC4E63B425733A64007538C3 /* AddNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E63B325733A64007538C3 /* AddNameView.swift */; };
 		BC4E63BC25734F71007538C3 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E63BB25734F71007538C3 /* FileManager+Extension.swift */; };
 		BC4E63C425735530007538C3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E63C325735530007538C3 /* DetailView.swift */; };
-		BC69E50725732FE00048C325 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69E50525732FE00048C325 /* Person+CoreDataClass.swift */; };
-		BC69E50825732FE00048C325 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69E50625732FE00048C325 /* Person+CoreDataProperties.swift */; };
+		BC8250FA25735892006092C3 /* MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8250F925735892006092C3 /* MapKit.swift */; };
+		BC8250FE25735AF4006092C3 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8250FD25735AF4006092C3 /* LocationFetcher.swift */; };
+		BC82510325735D14006092C3 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82510125735D14006092C3 /* Person+CoreDataClass.swift */; };
+		BC82510425735D14006092C3 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82510225735D14006092C3 /* Person+CoreDataProperties.swift */; };
 		BCAF037B25732E6500C7E219 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF037A25732E6500C7E219 /* AppDelegate.swift */; };
 		BCAF037D25732E6500C7E219 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF037C25732E6500C7E219 /* SceneDelegate.swift */; };
 		BCAF037F25732E6500C7E219 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF037E25732E6500C7E219 /* ContentView.swift */; };
@@ -27,8 +29,10 @@
 		BC4E63B325733A64007538C3 /* AddNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameView.swift; sourceTree = "<group>"; };
 		BC4E63BB25734F71007538C3 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		BC4E63C325735530007538C3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		BC69E50525732FE00048C325 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		BC69E50625732FE00048C325 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		BC8250F925735892006092C3 /* MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKit.swift; sourceTree = "<group>"; };
+		BC8250FD25735AF4006092C3 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		BC82510125735D14006092C3 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		BC82510225735D14006092C3 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		BCAF037725732E6500C7E219 /* Milestone 13-15 NameToFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Milestone 13-15 NameToFace.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCAF037A25732E6500C7E219 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCAF037C25732E6500C7E219 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,8 +68,8 @@
 		BC69E50425732FCD0048C325 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BC69E50525732FE00048C325 /* Person+CoreDataClass.swift */,
-				BC69E50625732FE00048C325 /* Person+CoreDataProperties.swift */,
+				BC82510125735D14006092C3 /* Person+CoreDataClass.swift */,
+				BC82510225735D14006092C3 /* Person+CoreDataProperties.swift */,
 				BCAF038025732E6500C7E219 /* Milestone_13_15_NameToFace.xcdatamodeld */,
 			);
 			path = Models;
@@ -119,6 +123,7 @@
 				BCAF039325732EC200C7E219 /* ImagePicker.swift */,
 				BC4E63B325733A64007538C3 /* AddNameView.swift */,
 				BC4E63C325735530007538C3 /* DetailView.swift */,
+				BC8250F925735892006092C3 /* MapKit.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				BCAF039825732EE400C7E219 /* ImageSaver.swift */,
+				BC8250FD25735AF4006092C3 /* LocationFetcher.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -203,12 +209,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCAF037B25732E6500C7E219 /* AppDelegate.swift in Sources */,
+				BC82510325735D14006092C3 /* Person+CoreDataClass.swift in Sources */,
 				BC4E63B425733A64007538C3 /* AddNameView.swift in Sources */,
-				BC69E50725732FE00048C325 /* Person+CoreDataClass.swift in Sources */,
+				BC8250FE25735AF4006092C3 /* LocationFetcher.swift in Sources */,
 				BC4E63C425735530007538C3 /* DetailView.swift in Sources */,
 				BCAF039925732EE400C7E219 /* ImageSaver.swift in Sources */,
-				BC69E50825732FE00048C325 /* Person+CoreDataProperties.swift in Sources */,
+				BC8250FA25735892006092C3 /* MapKit.swift in Sources */,
 				BCAF039425732EC200C7E219 /* ImagePicker.swift in Sources */,
+				BC82510425735D14006092C3 /* Person+CoreDataProperties.swift in Sources */,
 				BCAF037D25732E6500C7E219 /* SceneDelegate.swift in Sources */,
 				BCAF037F25732E6500C7E219 /* ContentView.swift in Sources */,
 				BC4E63BC25734F71007538C3 /* FileManager+Extension.swift in Sources */,

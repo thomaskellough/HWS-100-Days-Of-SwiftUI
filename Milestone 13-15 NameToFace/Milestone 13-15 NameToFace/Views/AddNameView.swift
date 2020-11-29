@@ -11,6 +11,8 @@ import SwiftUI
 struct AddNameView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
+    
+    let locationFetcher = LocationFetcher()
 
     @Binding var image: Image?
     @Binding var uiImage: UIImage?
@@ -35,6 +37,7 @@ struct AddNameView: View {
                 .padding()
             }
         }
+        .onAppear(perform: fetchLocation)
         Button(action: {
             save()
         }, label: {
@@ -54,6 +57,11 @@ struct AddNameView: View {
         do {
             let completion = try convertImageToData(withFilename: newPerson.imageUrl!.uuidString)
             if completion {
+                if let location = locationFetcher.lastKnownLocation {
+                    newPerson.latitude = String(location.latitude)
+                    newPerson.longitude = String(location.longitude)
+                }
+                
                 if moc.hasChanges {
                     try? self.moc.save()
                 }
@@ -80,6 +88,10 @@ struct AddNameView: View {
         }
         
         return false
+    }
+    
+    func fetchLocation() {
+        self.locationFetcher.start()
     }
 }
 

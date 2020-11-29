@@ -5,22 +5,32 @@
 //  Created by Thomas Kellough on 11/28/20.
 //
 
+import MapKit
 import SwiftUI
 
 struct DetailView: View {
-    var image: Image?
+    @State private var segmentedIndex = 0
+    var person: Person?
     
     var body: some View {
-        if image != nil {
-            image!
-                .resizable()
-                .scaledToFit()
+        VStack {
+            Picker(selection: $segmentedIndex, label: Text("Photo or Map View")) {
+                Text("Photo").tag(0)
+                Text("Map").tag(1)
+            }.pickerStyle(SegmentedPickerStyle())
+            
+            if segmentedIndex == 0 {
+                if person?.image != nil {
+                    person?.image!
+                        .resizable()
+                        .scaledToFit()
+                }
+            } else if segmentedIndex == 1 {
+                MapView(centerCoordinate: (person?.location)!)
+            }
+            
+            Spacer()
         }
-    }
-}
-
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView(image: Image(systemName: "plus"))
+        .navigationBarTitle(person!.unwrappedName)
     }
 }
