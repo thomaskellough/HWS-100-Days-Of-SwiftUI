@@ -28,8 +28,9 @@ struct ContentView: View {
                         Text(mission.displayName)
                             .font(.headline)
                         Text(self.toggleLaunchCrew ? mission.formattedLaunchDate : mission.crewName)
-                        
                     }
+                    .accessibilityElement(children: .combine)
+                    .accessibility(label: Text("\(self.toggleLaunchCrew ? "Mission: \(mission.displayName). Launch date: \(mission.formattedLaunchDate)" : "Mission: \(mission.displayName). Crew members: \(mission.crewName)")"))
                 }
             }
             .navigationBarTitle("Moonshot")
