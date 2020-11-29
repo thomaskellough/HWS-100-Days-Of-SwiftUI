@@ -18,18 +18,22 @@ struct MissionView: View {
         GeometryReader { geometry in
             ScrollView(.vertical) {
                 VStack {
-                    Image(self.mission.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: geometry.size.width * 0.7)
-                        .padding(.top)
-                    
-                    Text("Launched: \(self.mission.formattedLaunchDate)")
-                        .font(.headline)
-                        .foregroundColor(.purple)
-                    
-                    Text(self.mission.description)
-                        .padding()
+                    Group {
+                        Image(self.mission.image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: geometry.size.width * 0.7)
+                            .padding(.top)
+                        
+                        Text("Launched: \(self.mission.formattedLaunchDate)")
+                            .font(.headline)
+                            .foregroundColor(.purple)
+                        
+                        Text(self.mission.description)
+                            .padding()
+                    }
+                    .accessibilityElement(children: .combine)
+                    .accessibility(label: Text("Launched on \(self.mission.formattedLaunchDate). \(self.mission.description)"))
                     
                     ForEach(self.astronauts, id: \.role) { crewMember in
                         NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut, missions: self.missions)) {
@@ -47,6 +51,8 @@ struct MissionView: View {
                                         .font(.subheadline)
                                         .foregroundColor(.secondary)
                                 }
+                                .accessibilityElement(children: .combine)
+                                .accessibility(label: Text("\(crewMember.astronaut.name) as \(crewMember.role)"))
                                 Spacer()
                             }
                             .padding(.horizontal)
