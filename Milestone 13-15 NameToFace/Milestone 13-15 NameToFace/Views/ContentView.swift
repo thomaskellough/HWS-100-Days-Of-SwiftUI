@@ -33,13 +33,18 @@ struct ContentView: View {
             VStack {
                 if people.count > 0 {
                     List(people) { person in
-                        HStack {
-                            person.image!
-                                .resizable()
-                                .frame(width: 64, height: 64)
-                                .clipShape(Capsule())
-                            Text(person.unwrappedName)
-                        }
+                        NavigationLink(
+                            destination: DetailView(image: person.image),
+                            label: {
+                                HStack {
+                                    person.image!
+                                        .resizable()
+                                        .frame(width: 64, height: 64)
+                                        .clipShape(Capsule())
+                                    Text(person.unwrappedName)
+                                }
+                            })
+ 
                     }
                 } else {
                     Text("No people added. Please select the '+' button at the top rigth to add your first person.")
