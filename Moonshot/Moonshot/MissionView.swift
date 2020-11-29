@@ -24,6 +24,7 @@ struct MissionView: View {
                             .scaledToFit()
                             .frame(maxWidth: geometry.size.width * 0.7)
                             .padding(.top)
+                            .accessibility(hidden: true)
                         
                         Text("Launched: \(self.mission.formattedLaunchDate)")
                             .font(.headline)
