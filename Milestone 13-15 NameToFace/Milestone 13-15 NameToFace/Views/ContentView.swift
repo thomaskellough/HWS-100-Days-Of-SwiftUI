@@ -37,6 +37,7 @@ struct ContentView: View {
                             person.image!
                                 .resizable()
                                 .frame(width: 64, height: 64)
+                                .clipShape(Capsule())
                             Text(person.unwrappedName)
                         }
                     }
