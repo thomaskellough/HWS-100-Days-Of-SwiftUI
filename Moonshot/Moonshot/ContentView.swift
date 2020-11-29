@@ -37,6 +37,7 @@ struct ContentView: View {
                 Button("Launch/Crew") {
                     self.toggleLaunchCrew.toggle()
                 }
+                .accessibility(label: Text("Filter by launch or crew. Currently filtered with \(self.toggleLaunchCrew ? "launch date" : "crew members")"))
             )
         }
     }
