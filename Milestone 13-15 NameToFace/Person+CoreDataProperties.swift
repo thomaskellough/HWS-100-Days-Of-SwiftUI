@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 
 extension Person {
@@ -21,6 +22,24 @@ extension Person {
     
     public var unwrappedName: String {
         name?.capitalized ?? "Unknown"
+    }
+    
+    public var image: Image? {
+        if let uuid = imageUrl {
+            let path = FileManager().documentDirectory.appendingPathComponent(uuid.uuidString)
+            do {
+                let data = try Data(contentsOf: path)
+                if let uiImage = UIImage(data: data) {
+                    let image = Image(uiImage: uiImage)
+                 
+                    return image
+                }
+            } catch let error {
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+        
+        return nil
     }
 
 }
