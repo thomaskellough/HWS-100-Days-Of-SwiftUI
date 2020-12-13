@@ -38,6 +38,21 @@ struct ProspectsView: View {
         }
     }
     
+    let simulatedDataStrings = [
+        "Paul Hudson\npaul@hackingwithswift.com",
+        "Thomas Kellough\npthomas@hackingwithswift.com",
+        "Harry Potter\nharry@hackingwithswift.com",
+        "Luna Lovegood\nluna@hackingwithswift.com",
+        "Hermione Granger\nhermione@hackingwithswift.com",
+        "Severus Snape\nseverus@hackingwithswift.com",
+        "Ronald Weasley\nronald@hackingwithswift.com",
+        "Rubeus Hagrid\nrubeus@hackingwithswift.com",
+        "Albus Dumbledore\nalbus@hackingwithswift.com",
+        "Fred Weasley\nfred@hackingwithswift.com",
+        "George Weasley\ngeorge@hackingwithswift.com"
+    ]
+    @State private var isShowingActionSheet = false
+    
     // QR Scanner variables
     @State private var isShowingScanner = false
     
@@ -70,16 +85,34 @@ struct ProspectsView: View {
                 }
             }
             .navigationBarTitle(title)
-            .navigationBarItems(trailing: Button(action: {
-                self.isShowingScanner = true
-            }) {
-                Image(systemName: "qrcode.viewfinder")
-                Text("Scan")
-            })
+            .navigationBarItems(trailing:
+                    HStack {
+                        Button(action: {
+                            self.isShowingScanner = true
+                        }) {
+                            Image(systemName: "qrcode.viewfinder")
+                            Text("Scan")
+                        }
+                        
+                        Button(action: {
+                            self.isShowingActionSheet = true
+                        }) {
+                            Image(systemName: "swift")
+                            Text("Filter")
+                        }
+                    })
             .sheet(isPresented: $isShowingScanner) {
-                CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: self.handleScan)
+                CodeScannerView(codeTypes: [.qr], simulatedData: simulatedDataStrings.randomElement()!, completion: self.handleScan)
+            }
+            .actionSheet(isPresented: $isShowingActionSheet) {
+                ActionSheet(title: Text("Sort prospects"), message: Text("Select your sort method"), buttons: [
+                    .default(Text("By name")) { self.prospects.sortProspects("name") },
+                    .default(Text("By date")) { self.prospects.sortProspects("date") },
+                    .cancel()
+                ])
             }
         }
+        
     }
     
     func handleScan(result: Result<String, CodeScannerView.ScanError>) {

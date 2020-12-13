@@ -7,11 +7,20 @@
 
 import SwiftUI
 
-class Prospect: Identifiable, Codable {
+class Prospect: Identifiable, Codable, Comparable {
     let id = UUID()
+    var date = Date()
     var name = "Anonymous"
     var emailAddress = ""
     fileprivate(set) var isContacted = false
+    
+    static func == (lhs: Prospect, rhs: Prospect) -> Bool {
+        lhs.emailAddress == rhs.emailAddress
+    }
+    
+    static func < (lhs: Prospect, rhs: Prospect) -> Bool {
+        lhs.name < rhs.name
+    }
 }
 
 class Prospects: ObservableObject {
@@ -58,5 +67,17 @@ class Prospects: ObservableObject {
         objectWillChange.send()
         prospect.isContacted.toggle()
         save()
+    }
+    
+    func sortProspects(_ sort: String) {
+        objectWillChange.send()
+        switch sort {
+        case "name":
+            self.people.sort()
+        case "date":
+            self.people = self.people.sorted { $0.date < $1.date }
+        default:
+            break
+        }
     }
 }
