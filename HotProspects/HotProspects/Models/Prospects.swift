@@ -19,14 +19,19 @@ class Prospects: ObservableObject {
     static let saveKey = "ProspectsSavedData"
     
     init() {
-        if let data = UserDefaults.standard.data(forKey: Self.saveKey) {
+        let url = FileManager().documentDirectory.appendingPathComponent(Self.saveKey)
+        do {
+            let data = try Data(contentsOf: url)
             if let decoded = try? JSONDecoder().decode([Prospect].self, from: data) {
                 self.people = decoded
                 return
             } else {
                 assertionFailure("Failed to decode data")
             }
+        } catch let error {
+            print("Error reading data: \(error.localizedDescription)")
         }
+
         self.people = []
     }
     
@@ -37,7 +42,15 @@ class Prospects: ObservableObject {
     
     private func save() {
         if let encoded = try? JSONEncoder().encode(people) {
-            UserDefaults.standard.set(encoded, forKey: Self.saveKey)
+            if let str = String(data: encoded, encoding: .utf8) {
+                let url = FileManager().documentDirectory.appendingPathComponent(Self.saveKey)
+                
+                do {
+                    try str.write(to: url, atomically: true, encoding: .utf8)
+                } catch let error {
+                    print("Error writing data: \(error.localizedDescription)")
+                }
+            }
         }
     }
     
