@@ -12,37 +12,19 @@ enum NetworkError: Error {
 }
 
 struct ContentView: View {
-    @State private var selectedTab = "Tab 1 View"
+    @ObservedObject var updater = DelayedUpdater()
 
     var body: some View {
-        TabView(selection: $selectedTab) {
-            Text("Hello, World!")
-                .onAppear {
-                    self.fetchData(from: "https://www.apple.com") { result in
-                        switch result {
-                        case .success(let str):
-                            print(str)
-                        case .failure(let error):
-                            switch error {
-                            case .badURL:
-                                print("Bad url")
-                            case .requestFailed:
-                                print("Request failed")
-                            case .unknown:
-                                print("Unknown")
-                            }
-                        }
-                    }
-                }
-                .onTapGesture {
-                    self.selectedTab = "Tab 2 View"
-                }
-                .tabItem {
-                    Image(systemName: "star")
-                    Text("Tab One")
-                }
-                .tag("Tab 1 View")
+        VStack {
+            Text("Value is: \(updater.value)")
+            Button("Tap me") {
+                buttonTapped()
+            }
         }
+    }
+    
+    func buttonTapped() {
+        print(self.updater.value)
     }
     
     func fetchData(from urlString: String, completion: @escaping (Result<String, NetworkError>) -> Void) {
@@ -72,3 +54,19 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+
+class DelayedUpdater: ObservableObject {
+    var value = 0 {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    
+    init() {
+        for i in 1...10 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + Double(i)) {
+                self.value += 1
+            }
+        }
+    }
+}
