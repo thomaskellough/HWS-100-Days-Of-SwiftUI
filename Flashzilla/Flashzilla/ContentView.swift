@@ -9,34 +9,20 @@ import CoreHaptics
 import SwiftUI
 
 struct ContentView: View {
-
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State private var counter = 0
+    
     var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(Color.blue)
-                .frame(width: 300, height: 300)
-                .onTapGesture {
-                    print("Rectangle tapped")
+        Text("Hello, world")
+            .onReceive(timer) { time in
+                if self.counter == 5 {
+                    self.timer.upstream.connect().cancel()
+                } else {
+                    print("The time is now \(time)")
                 }
-                .contentShape(Circle())
-            
-            Circle()
-                .fill(Color.red)
-                .frame(width: 300, height: 300)
-                .onTapGesture {
-                    print("Cirlce tapped")
-                }
-            
-            VStack {
-                Text("Hello")
-                Spacer().frame(height: 100)
-                Text("World")
+                
+                self.counter += 1
             }
-            .contentShape(Rectangle())
-            .onTapGesture {
-                print("Vstack tapped")
-            }
-        }
     }
     
 }
