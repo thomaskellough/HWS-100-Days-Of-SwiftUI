@@ -15,6 +15,8 @@
 		BC69C6B625868DE800DDED78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC69C6B525868DE800DDED78 /* Assets.xcassets */; };
 		BC69C6B925868DE800DDED78 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC69C6B825868DE800DDED78 /* Preview Assets.xcassets */; };
 		BC69C6BC25868DE800DDED78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC69C6BA25868DE800DDED78 /* LaunchScreen.storyboard */; };
+		BCA63C742587CB0F00345A19 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA63C732587CB0F00345A19 /* View+Extension.swift */; };
+		BCA63C782587CC2F00345A19 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA63C772587CC2F00345A19 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		BC69C6B825868DE800DDED78 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC69C6BB25868DE800DDED78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC69C6BD25868DE800DDED78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCA63C732587CB0F00345A19 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		BCA63C772587CC2F00345A19 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				BC69C6B025868DE700DDED78 /* ContentView.swift */,
+				BCA63C772587CC2F00345A19 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -76,6 +81,7 @@
 		BC69C6AB25868DE700DDED78 /* Flashzilla */ = {
 			isa = PBXGroup;
 			children = (
+				BCA63C722587CB0400345A19 /* Extensions */,
 				BC5F9AC22586AE8300D9F8BF /* Models */,
 				BC5F9AC12586AE7C00D9F8BF /* Views */,
 				BC69C6AC25868DE700DDED78 /* AppDelegate.swift */,
@@ -95,6 +101,14 @@
 				BC69C6B825868DE800DDED78 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BCA63C722587CB0400345A19 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BCA63C732587CB0F00345A19 /* View+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,10 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCA63C782587CC2F00345A19 /* CardView.swift in Sources */,
 				BC69C6AD25868DE700DDED78 /* AppDelegate.swift in Sources */,
 				BC69C6B425868DE700DDED78 /* Flashzilla.xcdatamodeld in Sources */,
 				BC5F9AC42586AEA800D9F8BF /* Card.swift in Sources */,
 				BC69C6AF25868DE700DDED78 /* SceneDelegate.swift in Sources */,
+				BCA63C742587CB0F00345A19 /* View+Extension.swift in Sources */,
 				BC69C6B125868DE700DDED78 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
