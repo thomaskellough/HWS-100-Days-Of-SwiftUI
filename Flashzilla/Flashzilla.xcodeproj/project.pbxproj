@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC5F9AC42586AEA800D9F8BF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F9AC32586AEA800D9F8BF /* Card.swift */; };
 		BC69C6AD25868DE700DDED78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69C6AC25868DE700DDED78 /* AppDelegate.swift */; };
 		BC69C6AF25868DE700DDED78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69C6AE25868DE700DDED78 /* SceneDelegate.swift */; };
 		BC69C6B125868DE700DDED78 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69C6B025868DE700DDED78 /* ContentView.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC5F9AC32586AEA800D9F8BF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		BC69C6A925868DE700DDED78 /* Flashzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC69C6AC25868DE700DDED78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC69C6AE25868DE700DDED78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC5F9AC12586AE7C00D9F8BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC69C6B025868DE700DDED78 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BC5F9AC22586AE8300D9F8BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BC5F9AC32586AEA800D9F8BF /* Card.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BC69C6A025868DE700DDED78 = {
 			isa = PBXGroup;
 			children = (
@@ -58,9 +76,10 @@
 		BC69C6AB25868DE700DDED78 /* Flashzilla */ = {
 			isa = PBXGroup;
 			children = (
+				BC5F9AC22586AE8300D9F8BF /* Models */,
+				BC5F9AC12586AE7C00D9F8BF /* Views */,
 				BC69C6AC25868DE700DDED78 /* AppDelegate.swift */,
 				BC69C6AE25868DE700DDED78 /* SceneDelegate.swift */,
-				BC69C6B025868DE700DDED78 /* ContentView.swift */,
 				BC69C6B525868DE800DDED78 /* Assets.xcassets */,
 				BC69C6BA25868DE800DDED78 /* LaunchScreen.storyboard */,
 				BC69C6BD25868DE800DDED78 /* Info.plist */,
@@ -150,6 +169,7 @@
 			files = (
 				BC69C6AD25868DE700DDED78 /* AppDelegate.swift in Sources */,
 				BC69C6B425868DE700DDED78 /* Flashzilla.xcdatamodeld in Sources */,
+				BC5F9AC42586AEA800D9F8BF /* Card.swift in Sources */,
 				BC69C6AF25868DE700DDED78 /* SceneDelegate.swift in Sources */,
 				BC69C6B125868DE700DDED78 /* ContentView.swift in Sources */,
 			);
