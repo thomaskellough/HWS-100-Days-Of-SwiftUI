@@ -10,6 +10,7 @@ import SwiftUI
 struct CardView: View {
     // Accessibility
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
+    @Environment(\.accessibilityEnabled) var accessibilityEnabled
     
     // Get screen height to adjust card size for all devices
     let width = UIScreen.main.bounds.size.width
@@ -43,14 +44,20 @@ struct CardView: View {
                 .shadow(radius: 10)
             
             VStack {
-                Text(card.prompt)
-                    .font(.largeTitle)
-                    .foregroundColor(.black)
-                
-                if isShowingAnswer {
-                    Text(card.answer)
-                        .font(.title)
-                        .foregroundColor(.gray)
+                if accessibilityEnabled {
+                    Text(isShowingAnswer ? card.answer : card.prompt)
+                        .font(.largeTitle)
+                        .foregroundColor(.black)
+                } else {
+                    Text(card.prompt)
+                        .font(.largeTitle)
+                        .foregroundColor(.black)
+                    
+                    if isShowingAnswer {
+                        Text(card.answer)
+                            .font(.title)
+                            .foregroundColor(.gray)
+                    }                    
                 }
             }
             .padding(20)
@@ -60,6 +67,7 @@ struct CardView: View {
         .rotationEffect(.degrees(Double(offset.width / 5)))
         .offset(x: offset.width * 5, y: 0)
         .opacity(2 - Double(abs(offset.width / 50)))
+        .accessibility(addTraits: .isButton)
         .gesture(
             DragGesture()
                 .onChanged { gesture in

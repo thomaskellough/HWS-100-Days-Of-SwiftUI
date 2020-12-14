@@ -19,7 +19,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Image("background")
+            Image(decorative: "background")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
@@ -47,6 +47,7 @@ struct ContentView: View {
                         }
                         .stacked(at: index, in: self.cards.count)
                         .allowsHitTesting(index == self.cards.count - 1)
+                        .accessibility(hidden: index < self.cards.count - 1)
                     }
                 }
                 .allowsHitTesting(timeRemaining > 0)
