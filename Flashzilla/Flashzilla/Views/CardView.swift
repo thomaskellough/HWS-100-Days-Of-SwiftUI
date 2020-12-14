@@ -79,8 +79,12 @@ struct CardView: View {
                     if abs(self.offset.width) > 100 {
                         if self.offset.width < 0 {
                             self.feedback.notificationOccurred(.error)
+                        } else {
+                            var correct = UserDefaults.standard.integer(forKey: "currentScore")
+                            correct += 1
+                            UserDefaults.standard.setValue(correct, forKey: "currentScore")
                         }
-                        
+
                         self.removal?()
                     } else {
                         self.offset = .zero
