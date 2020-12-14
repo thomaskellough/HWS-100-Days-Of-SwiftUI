@@ -40,10 +40,22 @@ struct ContentView: View {
                         CardView(card: self.cards[index]) {
                             withAnimation {
                                 self.removeCard(at: index)
+                                if cards.isEmpty {
+                                    isActive = false
+                                }
                             }
                         }
                         .stacked(at: index, in: self.cards.count)
                     }
+                }
+                .allowsHitTesting(timeRemaining > 0)
+                
+                if cards.isEmpty {
+                    Button("Start Again", action: resetCards)
+                        .padding()
+                        .background(Color.white)
+                        .foregroundColor(.black)
+                        .clipShape(Capsule())
                 }
             }
             if differentiateWithoutColor {
@@ -77,12 +89,20 @@ struct ContentView: View {
             self.isActive = false
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-            self.isActive = true
+            if self.cards.isEmpty == false {
+                self.isActive = true                
+            }
         }
     }
     
     func removeCard(at index: Int) {
         cards.remove(at: index)
+    }
+    
+    func resetCards() {
+        cards = [Card](repeating: Card.example, count: 10)
+        timeRemaining = 100
+        isActive = true
     }
 }
 
