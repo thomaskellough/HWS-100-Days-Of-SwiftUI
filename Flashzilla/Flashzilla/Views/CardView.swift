@@ -18,9 +18,13 @@ struct CardView: View {
     // Gesture variables
     @State private var offset = CGSize.zero
     
+    // Haptic feedback
+    @State private var feedback = UINotificationFeedbackGenerator()
+    
     @State private var isShowingAnswer = false
     let card: Card
     var removal: (() -> Void)? = nil
+    
     
     var body: some View {
         ZStack {
@@ -60,10 +64,15 @@ struct CardView: View {
             DragGesture()
                 .onChanged { gesture in
                     self.offset = gesture.translation
+                    self.feedback.prepare()
                 }
                 
                 .onEnded { _ in
                     if abs(self.offset.width) > 100 {
+                        if self.offset.width < 0 {
+                            self.feedback.notificationOccurred(.error)
+                        }
+                        
                         self.removal?()
                     } else {
                         self.offset = .zero
