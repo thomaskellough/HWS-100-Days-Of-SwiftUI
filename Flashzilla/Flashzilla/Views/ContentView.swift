@@ -14,6 +14,7 @@ struct ContentView: View {
     @Environment(\.accessibilityEnabled) var accessibilityEnabled
     
     @State private var cards = [Card]()
+    @State private var tryAgainCards = [Card]()
     @State private var isActive = true // used to show when app is in background or not
     @State private var timeRemaining = 100
     @State private var showingEditScreen = false
@@ -71,6 +72,12 @@ struct ContentView: View {
                         .background(Color.white)
                         .foregroundColor(.black)
                         .clipShape(Capsule())
+                    UserDefaults.standard.dictionary(forKey: "tryAgainCards") != nil ? Button("Try Again", action: tryAgain)
+                        .padding()
+                        .background(Color.white)
+                        .foregroundColor(.black)
+                        .clipShape(Capsule())
+                        : nil
                 }
             }
             
@@ -171,6 +178,26 @@ struct ContentView: View {
         }
         UserDefaults.standard.setValue(0, forKey: "currentScore")
         loadData()
+    }
+    
+    func tryAgain() {
+        timeRemaining = 100
+        isActive = true
+        if UserDefaults.standard.integer(forKey: "currentScore") > UserDefaults.standard.integer(forKey: "highScore") {
+            UserDefaults.standard.setValue(UserDefaults.standard.integer(forKey: "currentScore"), forKey: "highScore")
+        }
+        var savedCards = [Card]()
+        
+        if let savedCardsDictionary = UserDefaults.standard.dictionary(forKey: "tryAgainCards") as? [String: String] {
+            for (key, value) in savedCardsDictionary {
+                let card = Card(prompt: key, answer: value)
+                savedCards.append(card)
+            }
+            
+            self.cards = savedCards
+        } else {
+            loadData()
+        }
     }
     
     func loadData() {

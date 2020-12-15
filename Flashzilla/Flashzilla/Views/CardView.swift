@@ -78,8 +78,17 @@ struct CardView: View {
                 .onEnded { _ in
                     if abs(self.offset.width) > 100 {
                         if self.offset.width < 0 {
+                            // Player did not get answer correct
                             self.feedback.notificationOccurred(.error)
+                            var tryAgainDictionary: [String: String] = [:]
+                            if let savedDictonary = UserDefaults.standard.dictionary(forKey: "tryAgainCards") as? [String: String] {
+                                tryAgainDictionary = savedDictonary
+                            }
+                            
+                            tryAgainDictionary[card.prompt] = card.answer
+                            UserDefaults.standard.setValue(tryAgainDictionary, forKey: "tryAgainCards")
                         } else {
+                            // Player did get answer correct
                             var correct = UserDefaults.standard.integer(forKey: "currentScore")
                             correct += 1
                             UserDefaults.standard.setValue(correct, forKey: "currentScore")
