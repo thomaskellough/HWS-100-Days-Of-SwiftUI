@@ -19,12 +19,19 @@ struct MissionView: View {
             ScrollView(.vertical) {
                 VStack {
                     Group {
-                        Image(self.mission.image)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: geometry.size.width * 0.7)
-                            .padding(.top)
-                            .accessibility(hidden: true)
+                        GeometryReader { geo in
+                            ZStack {
+                                Image(self.mission.image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .scaleEffect(max(0.7, min(1.0, geo.frame(in: .global).minY / (geometry.size.width / 5))))
+                                    .accessibility(hidden: true)
+                                    .padding()
+                            }
+                            .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
+
+                        }
+                        .frame(maxWidth: geometry.size.width)
                         
                         Text("Launched: \(self.mission.formattedLaunchDate)")
                             .font(.headline)
