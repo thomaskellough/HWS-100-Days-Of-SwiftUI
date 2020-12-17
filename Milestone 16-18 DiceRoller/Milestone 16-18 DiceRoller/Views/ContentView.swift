@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         TabView {
             RollView()
@@ -16,7 +17,7 @@ struct ContentView: View {
                     Text("Roll")
                 }
             
-            Text("Hello world")
+            HistoryView()
                 .tabItem {
                     Image(systemName: "chart.bar.doc.horizontal")
                     Text("History")

@@ -19,37 +19,39 @@ struct RollView: View {
     @Environment(\.managedObjectContext) var moc
     
     var body: some View {
-        VStack {
-            Text("Rolling")
+        NavigationView {
+            VStack {
+                ForEach(rolledDice, id: \.self) { dice in
+                    Image(dice)
+                        .resizable()
+                        .frame(width: width, height: height)
+                }
+                
+                Text("Total: \(total)")
+                    .padding()
+                
+                Spacer()
+                Button(action: {
+                    self.roll()
+                }, label: {
+                    Text("Roll")
+                        .font(.title)
+                })
                 .padding()
-            
-            ForEach(rolledDice, id: \.self) { dice in
-                Image(dice)
-                    .resizable()
-                    .frame(width: width, height: height)
+                .frame(width: width)
+                .background(Color.green)
+                .foregroundColor(Color.white)
+                .clipShape(Capsule())
             }
-            
-            Text("Total: \(total)")
-                .padding()
-            
-            Spacer()
-            Button(action: {
-                self.roll()
-            }, label: {
-                Text("Roll")
-                    .font(.title)
-            })
             .padding()
-            .frame(width: width)
-            .background(Color.green)
-            .foregroundColor(Color.white)
-            .clipShape(Capsule())
+            .onAppear(perform: {
+                self.roll(saveToCoreData: false)
+            })
+            .navigationBarTitle("Roll")
         }
-        .padding()
-        .onAppear(perform: roll)
     }
     
-    func roll() {
+    func roll(saveToCoreData: Bool = true) {
         var diceArray = [String]()
         self.total = 0
         
@@ -64,19 +66,22 @@ struct RollView: View {
         }
         
         self.rolledDice = diceArray
-        saveRoll()
+        
+        if saveToCoreData {
+            saveRoll()
+        }
     }
     
     func saveRoll() {
         let roll = Roll(context: self.moc)
         roll.total = Int16(self.total)
+        roll.date = Date()
         
         let stringArray: String = self.rolledDice.description
         let dataArray = stringArray.data(using: String.Encoding.utf16)
         roll.rolls = dataArray
         
         try? self.moc.save()
-        //        let arrayBack: [String] = try! JSONDecoder().decode([String].self, from: dataArray!)
     }
     
 }
