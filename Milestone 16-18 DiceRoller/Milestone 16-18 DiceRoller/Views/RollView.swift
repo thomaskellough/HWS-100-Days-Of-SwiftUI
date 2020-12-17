@@ -14,6 +14,7 @@ struct RollView: View {
     
     @State private var numberOfDice = 2
     @State private var rolledDice = [String]()
+    @State private var total = 0
     
     var body: some View {
         VStack {
@@ -25,6 +26,9 @@ struct RollView: View {
                     .resizable()
                     .frame(width: width, height: height)
             }
+            
+            Text("Total: \(total)")
+                .padding()
             
             Spacer()
             Button(action: {
@@ -44,14 +48,21 @@ struct RollView: View {
     
     func roll() {
         var diceArray = [String]()
+        self.total = 0
         
         for _ in 0..<numberOfDice {
             let randomDice = diceOptions.randomElement() ?? "dice_1"
             diceArray.append(randomDice)
+            
+            let numberString = randomDice.split(separator: "_")[1]
+            if let number = Int(numberString) {
+                self.total += number
+            }
         }
         
         self.rolledDice = diceArray
     }
+    
 }
 
 struct RollView_Previews: PreviewProvider {
