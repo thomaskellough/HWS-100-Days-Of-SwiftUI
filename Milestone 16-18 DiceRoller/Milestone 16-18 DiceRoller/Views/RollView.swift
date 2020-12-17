@@ -21,10 +21,8 @@ struct RollView: View {
     var body: some View {
         NavigationView {
             VStack {
-                ForEach(rolledDice, id: \.self) { dice in
-                    Image(dice)
-                        .resizable()
-                        .frame(width: width, height: height)
+                ForEach(0..<Int(ceil(Double((rolledDice.count / 2))))) { index in
+                    DiceView(dice1: rolledDice[index], dice2: rolledDice[rolledDice.count - index + 1])
                 }
                 
                 Text("Total: \(total)")
@@ -53,6 +51,7 @@ struct RollView: View {
     
     func roll(saveToCoreData: Bool = true) {
         var diceArray = [String]()
+        numberOfDice = UserDefaults.standard.integer(forKey: "numberOfDice")
         self.total = 0
         
         for _ in 0..<numberOfDice {
@@ -89,5 +88,25 @@ struct RollView: View {
 struct RollView_Previews: PreviewProvider {
     static var previews: some View {
         RollView()
+    }
+}
+
+struct DiceView: View {
+    let dice1: String
+    let dice2: String?
+    let width: CGFloat = 100
+    let height: CGFloat = 100
+    
+    var body: some View {
+        HStack {
+            Image(dice1)
+                .resizable()
+                .frame(width: width, height: height)
+            dice2 != nil
+                ? Image(dice2!)
+                    .resizable()
+                    .frame(width: width, height: height)
+                : nil
+        }
     }
 }

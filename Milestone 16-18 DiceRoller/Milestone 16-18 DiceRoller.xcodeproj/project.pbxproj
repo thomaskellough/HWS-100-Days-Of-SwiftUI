@@ -18,6 +18,7 @@
 		BCD79FD5258B1F6600BA259C /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD79FD4258B1F6600BA259C /* HistoryView.swift */; };
 		BCD79FDA258B211400BA259C /* Roll+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD79FD8258B211400BA259C /* Roll+CoreDataClass.swift */; };
 		BCD79FDB258B211400BA259C /* Roll+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD79FD9258B211400BA259C /* Roll+CoreDataProperties.swift */; };
+		BCD79FDF258B255C00BA259C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD79FDE258B255C00BA259C /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		BCD79FD4258B1F6600BA259C /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		BCD79FD8258B211400BA259C /* Roll+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Roll+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		BCD79FD9258B211400BA259C /* Roll+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Roll+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		BCD79FDE258B255C00BA259C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				BC3E0F1E258B10AA001EA950 /* ContentView.swift */,
 				BCD79FC4258B13B800BA259C /* RollView.swift */,
 				BCD79FD4258B1F6600BA259C /* HistoryView.swift */,
+				BCD79FDE258B255C00BA259C /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCD79FDA258B211400BA259C /* Roll+CoreDataClass.swift in Sources */,
+				BCD79FDF258B255C00BA259C /* SettingsView.swift in Sources */,
 				BCD79FD5258B1F6600BA259C /* HistoryView.swift in Sources */,
 				BCD79FDB258B211400BA259C /* Roll+CoreDataProperties.swift in Sources */,
 				BC3E0F1B258B10AA001EA950 /* AppDelegate.swift in Sources */,

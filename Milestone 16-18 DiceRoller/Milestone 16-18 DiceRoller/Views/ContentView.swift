@@ -22,6 +22,12 @@ struct ContentView: View {
                     Image(systemName: "chart.bar.doc.horizontal")
                     Text("History")
                 }
+            
+            SettingsView()
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
         }
     }
 }
