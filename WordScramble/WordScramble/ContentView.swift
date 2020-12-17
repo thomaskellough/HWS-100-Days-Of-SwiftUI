@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var usedWords = [String]()
+    @State private var usedWords = ["alpha", "beta", "gamma", "delta", "echo", "charlie", "hermione", "harry", "ronald", "severus", "alpha", "beta", "gamma", "delta", "echo", "charlie", "hermione", "harry", "ronald", "severus"]
     @State private var rootWord = ""
     @State private var newWord = ""
     
@@ -22,35 +22,42 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                TextField("Enter your word", text: $newWord, onCommit: addNewWord)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                    .autocapitalization(.none)
-                
-                List(usedWords, id: \.self) { word in
-                    HStack {
-                        Image(systemName: "\(word.count).circle")
-                        Text(word)
+            GeometryReader { fullView in
+                VStack {
+                    TextField("Enter your word", text: $newWord, onCommit: addNewWord)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                        .autocapitalization(.none)
+                    
+                    List(usedWords, id: \.self) { word in
+                        GeometryReader { geo in
+                            HStack() {
+                                Image(systemName: "\(word.count).circle")
+                                    .foregroundColor(Color(hue: Double(geo.frame(in: .global).maxY / fullView.size.height),
+                                                           saturation: 1,
+                                                           brightness: 1))
+                                Text(word)
+                            }
+                            .offset(x: (geo.frame(in: .global).minY - (fullView.size.height) > 8 ? geo.frame(in: .global).minY - (fullView.size.height) : 8),
+                                    y: 0)
+                        }
                     }
-                    .accessibilityElement(children: .ignore)
-                    .accessibility(label: Text("\(word), \(word.count) letters"))
-                }
-                
-                HStack {
-                    Text("Score:")
-                        .padding()
-                        .font(.title)
-                    TextField("0", text: $score)
-                        .padding()
-                        .font(.title)
+                    
+                    HStack {
+                        Text("Score:")
+                            .padding()
+                            .font(.title)
+                        TextField("0", text: $score)
+                            .padding()
+                            .font(.title)
+                    }
                 }
             }
-        .navigationBarTitle(rootWord)
+            .navigationBarTitle(rootWord)
             .navigationBarItems(leading: Button("Restart") {
                 self.startGame()
             })
-        .onAppear(perform: startGame)
+            .onAppear(perform: startGame)
             .alert(isPresented: $showingError) {
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
             }
