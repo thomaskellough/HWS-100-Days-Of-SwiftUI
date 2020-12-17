@@ -33,9 +33,9 @@ struct ContentView: View {
                         GeometryReader { geo in
                             HStack() {
                                 Image(systemName: "\(word.count).circle")
-                                    .foregroundColor(Color(hue: Double(geo.frame(in: .global).maxY / fullView.size.height),
+                                    .foregroundColor(Color(hue: Double(geo.frame(in: .global).minY / fullView.size.height),
                                                            saturation: 1,
-                                                           brightness: 1))
+                                                           brightness: 0.7))
                                 Text(word)
                             }
                             .offset(x: (geo.frame(in: .global).minY - (fullView.size.height) > 8 ? geo.frame(in: .global).minY - (fullView.size.height) : 8),
