@@ -12,14 +12,14 @@ struct ContentView: View {
         TabView {
             RollView()
                 .tabItem {
-                    Image(systemName: "person")
-                    Text("Tab One")
+                    Image(systemName: "crown")
+                    Text("Roll")
                 }
             
             Text("Hello world")
                 .tabItem {
-                    Image(systemName: "bolt")
-                    Text("Tab two")
+                    Image(systemName: "chart.bar.doc.horizontal")
+                    Text("History")
                 }
         }
     }

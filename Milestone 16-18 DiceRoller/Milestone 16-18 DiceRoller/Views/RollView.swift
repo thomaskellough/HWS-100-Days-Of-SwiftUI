@@ -16,6 +16,8 @@ struct RollView: View {
     @State private var rolledDice = [String]()
     @State private var total = 0
     
+    @Environment(\.managedObjectContext) var moc
+    
     var body: some View {
         VStack {
             Text("Rolling")
@@ -43,6 +45,7 @@ struct RollView: View {
             .foregroundColor(Color.white)
             .clipShape(Capsule())
         }
+        .padding()
         .onAppear(perform: roll)
     }
     
@@ -61,6 +64,19 @@ struct RollView: View {
         }
         
         self.rolledDice = diceArray
+        saveRoll()
+    }
+    
+    func saveRoll() {
+        let roll = Roll(context: self.moc)
+        roll.total = Int16(self.total)
+        
+        let stringArray: String = self.rolledDice.description
+        let dataArray = stringArray.data(using: String.Encoding.utf16)
+        roll.rolls = dataArray
+        
+        try? self.moc.save()
+        //        let arrayBack: [String] = try! JSONDecoder().decode([String].self, from: dataArray!)
     }
     
 }
