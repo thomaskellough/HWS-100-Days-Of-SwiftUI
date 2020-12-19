@@ -5,6 +5,8 @@
 //  Created by Thomas Kellough on 12/17/20.
 //
 
+import Foundation
+
 struct Resort: Codable, Identifiable {
     let id: String
     let name: String
@@ -17,4 +19,6 @@ struct Resort: Codable, Identifiable {
     let elevation: Int
     let runs: Int
     let facilities: [String]
+    
+    static let example = (Bundle.main.decode("resorts.json") as [Resort])[0]
 }
